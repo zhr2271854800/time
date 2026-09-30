@@ -19,8 +19,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <style>
     :root {
-      --ink: #1a1f2e;
-      --muted: #5c6578;
+      --ink: #0a0f1a;
+      --muted: #1e293b;
       --line: #e4e8f0;
       --paper: #f7f5f0;
       --card: #ffffff;
@@ -62,7 +62,7 @@
       font-size: 13px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #8b93a7;
+      color: #1e293b;
       font-weight: 600;
     }
     nav.toc p.brand {
@@ -82,7 +82,7 @@
       text-decoration: none;
     }
     nav.toc a:hover, nav.toc a.active { background: #232a3b; color: #fff; }
-    nav.toc a.sub { padding-left: 18px; color: #9aa3b8; font-size: 12.5px; }
+    nav.toc a.sub { padding-left: 18px; color: #1e293b; font-size: 12.5px; }
     main {
       max-width: 920px;
       margin: 0 auto;
@@ -274,7 +274,29 @@
       header.hero, .abstract, section.card { box-shadow: none; }
     }
   
-  </style>
+  
+  /* High-Contrast Non-Grey Text Overrides */
+  body {
+    color: #0f172a !important;
+  }
+  .wrap p, .wrap li, .wrap td, .wrap th, .wrap dd, .wrap dt,
+  .faustian-desc, .field-desc, .ref-list, figcaption, .keywords,
+  label, .readout-lbl, section p, section li, section td, section dd, section dt,
+  .abstract, .abstract p, .callout p, nav.toc li, nav.toc a {
+    color: #0f172a !important;
+  }
+  header.hero, header.hero * {
+    color: #ffffff !important;
+  }
+  header.hero .kicker, header.hero .subtitle {
+    color: #fef08a !important;
+    opacity: 1 !important;
+  }
+  header.hero .meta, header.hero .meta * {
+    color: #f8fafc !important;
+    opacity: 1 !important;
+  }
+</style>
 </head>
 <body>
 <nav id="top-paper-nav" style="background:#0f3844; color:#fff; padding:10px 24px; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:13.5px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border-bottom:3px solid #d3a26b; position:sticky; top:0; z-index:10000; box-shadow:0 3px 12px rgba(0,0,0,0.18);">

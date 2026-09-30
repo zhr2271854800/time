@@ -6,7 +6,7 @@
 <title>磁矩调控在钠离子电池层状氧化物正极氧（阴离子）氧化还原中的研究进展——调研综述</title>
 <style>
   :root{
-    --ink:#1c2530; --muted:#5b6b7c; --accent:#0f5c73; --accent2:#b4552d;
+    --ink: #0a0f1a; --muted: #1e293b; --accent:#0f5c73; --accent2:#b4552d;
     --bg:#f7f8f6; --card:#ffffff; --line:#dfe5e8; --hl:#eaf3f6; --hl2:#fbf1ea;
   }
   *{box-sizing:border-box;}
@@ -21,10 +21,10 @@
     color:#fff; padding:54px 26px 46px; border-bottom:5px solid #d3a26b;
   }
   .hero-inner{max-width:1020px; margin:0 auto;}
-  .kicker{letter-spacing:.22em; font-size:13px; text-transform:uppercase; opacity:.85; font-family:system-ui,sans-serif;}
+  .kicker{letter-spacing:.22em; font-size:13px; text-transform:uppercase; opacity: 1; font-family:system-ui,sans-serif;}
   h1{font-size:31px; line-height:1.42; margin:14px 0 10px; font-weight:700;}
-  .subtitle{font-size:17px; opacity:.94; margin:0 0 18px;}
-  .meta{font-family:system-ui,sans-serif; font-size:13.5px; opacity:.85;}
+  .subtitle{font-size:17px; opacity: 1; margin:0 0 18px;}
+  .meta{font-family:system-ui,sans-serif; font-size:13.5px; opacity: 1;}
   .meta span{margin-right:22px;}
   nav.toc{
     background:var(--card); border:1px solid var(--line); border-radius:12px;
@@ -106,7 +106,29 @@
     table{font-size:13px;}
   }
 
-  </style>
+  
+  /* High-Contrast Non-Grey Text Overrides */
+  body {
+    color: #0f172a !important;
+  }
+  .wrap p, .wrap li, .wrap td, .wrap th, .wrap dd, .wrap dt,
+  .faustian-desc, .field-desc, .ref-list, figcaption, .keywords,
+  label, .readout-lbl, section p, section li, section td, section dd, section dt,
+  .abstract, .abstract p, .callout p, nav.toc li, nav.toc a {
+    color: #0f172a !important;
+  }
+  header.hero, header.hero * {
+    color: #ffffff !important;
+  }
+  header.hero .kicker, header.hero .subtitle {
+    color: #fef08a !important;
+    opacity: 1 !important;
+  }
+  header.hero .meta, header.hero .meta * {
+    color: #f8fafc !important;
+    opacity: 1 !important;
+  }
+</style>
 </head>
 <body>
 <nav id="top-paper-nav" style="background:#0f3844; color:#fff; padding:10px 24px; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:13.5px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border-bottom:3px solid #d3a26b; position:sticky; top:0; z-index:10000; box-shadow:0 3px 12px rgba(0,0,0,0.18);">
@@ -220,7 +242,7 @@
       <circle cx="216" cy="180" r="13" fill="#e07a5f"/><text x="216" y="185" text-anchor="middle" font-size="11" fill="#fff">O</text>
       <circle cx="105" cy="130" r="12" fill="#e07a5f"/><circle cx="193" cy="130" r="12" fill="#e07a5f"/>
       <circle cx="105" cy="228" r="12" fill="#e07a5f"/><circle cx="193" cy="228" r="12" fill="#e07a5f"/>
-      <text x="149" y="292" text-anchor="middle" font-size="11.5" fill="#5b6b7c">Δ / P 竞争 → HS / IS / LS</text>
+      <text x="149" y="292" text-anchor="middle" font-size="11.5" fill="#1e293b">Δ / P 竞争 → HS / IS / LS</text>
 
       <!-- panel 2 -->
       <rect x="315" y="18" width="270" height="294" rx="12" fill="#f2f7f9" stroke="#c9dbe2"/>
@@ -229,15 +251,15 @@
       <text x="345" y="88" font-size="12.5" fill="#b4552d" font-weight="bold">高自旋 HS</text>
       <line x1="345" y1="105" x2="425" y2="105" stroke="#90a4ae" stroke-width="3"/>
       <line x1="345" y1="132" x2="425" y2="132" stroke="#90a4ae" stroke-width="3"/>
-      <text x="440" y="110" font-size="11" fill="#5b6b7c">e<tspan font-size="9">g</tspan> 1e⁻ ↑</text>
-      <text x="440" y="137" font-size="11" fill="#5b6b7c">t<tspan font-size="9">2g</tspan> 3e⁻ ↑</text>
+      <text x="440" y="110" font-size="11" fill="#1e293b">e<tspan font-size="9">g</tspan> 1e⁻ ↑</text>
+      <text x="440" y="137" font-size="11" fill="#1e293b">t<tspan font-size="9">2g</tspan> 3e⁻ ↑</text>
       <text x="345" y="163" font-size="11.5" fill="#37474f">μ ≈ 4.9 μ<tspan font-size="9">B</tspan> · 强 J–T 畸变</text>
       <!-- LS -->
       <text x="345" y="205" font-size="12.5" fill="#b4552d" font-weight="bold">低自旋 LS</text>
       <line x1="345" y1="222" x2="425" y2="222" stroke="#90a4ae" stroke-width="3"/>
       <line x1="345" y1="249" x2="425" y2="249" stroke="#90a4ae" stroke-width="3"/>
-      <text x="440" y="227" font-size="11" fill="#5b6b7c">e<tspan font-size="9">g</tspan> 空</text>
-      <text x="440" y="254" font-size="11" fill="#5b6b7c">t<tspan font-size="9">2g</tspan> 4e⁻（成对）</text>
+      <text x="440" y="227" font-size="11" fill="#1e293b">e<tspan font-size="9">g</tspan> 空</text>
+      <text x="440" y="254" font-size="11" fill="#1e293b">t<tspan font-size="9">2g</tspan> 4e⁻（成对）</text>
       <text x="345" y="285" font-size="11.5" fill="#37474f">μ ≈ 2.8 μ<tspan font-size="9">B</tspan> · 抑制 J–T 畸变</text>
 
       <!-- panel 3 -->
@@ -251,7 +273,7 @@
       <text x="751" y="186" text-anchor="middle" font-size="11.5" fill="#0f5c73">→ 维持 TM–O 骨架完整性</text>
       <text x="751" y="228" text-anchor="middle" font-size="11.5" fill="#37474f">O 2p 空穴（O<sup>−</sup>）携带未配对自旋：</text>
       <text x="751" y="250" text-anchor="middle" font-size="11.5" fill="#37474f">自旋极化 → O–O 二聚 / 分子 O₂</text>
-      <text x="751" y="285" text-anchor="middle" font-size="11" fill="#5b6b7c">“自旋门”＝自旋通道不对称调控</text>
+      <text x="751" y="285" text-anchor="middle" font-size="11" fill="#1e293b">“自旋门”＝自旋通道不对称调控</text>
     </svg>
     <figcaption><b>图 1</b>　磁矩调控的三重物理图像：① 八面体晶体场决定自旋态；② 自旋态决定局域磁矩与 Jahn–Teller 畸变强度；③ 自旋上/下通道的不对称占据构成"自旋门"，而氧配体空穴的自旋极化是 O–O 二聚的前驱。</figcaption>
   </figure>
@@ -289,37 +311,37 @@
         <rect x="285" y="16" width="285" height="52" rx="9" fill="#fff" stroke="#b4552d" stroke-width="1.6"/>
         <text x="300" y="38" fill="#b4552d" font-weight="bold" font-size="12.5">① 配体场工程 / 自旋态切换</text>
         <text x="300" y="57" fill="#37474f" font-size="11">Mn/F 共掺 Na₄Fe₃(PO₄)₂P₂O₇：LS→IS</text>
-        <text x="600" y="48" fill="#5b6b7c" font-size="11">[23]</text>
+        <text x="600" y="48" fill="#1e293b" font-size="11">[23]</text>
 
         <line x1="235" y1="100" x2="285" y2="100" stroke="#90a4ae" stroke-width="2.5"/>
         <rect x="285" y="74" width="285" height="52" rx="9" fill="#fff" stroke="#b4552d" stroke-width="1.6"/>
         <text x="300" y="96" fill="#b4552d" font-weight="bold" font-size="12.5">② 空位工程裁剪 Mn³⁺ 自旋</text>
         <text x="300" y="115" fill="#37474f" font-size="11">P2-Na₂/₃[Zn₁/₉Mn₇/₉□₁/₉]O₂</text>
-        <text x="600" y="106" fill="#5b6b7c" font-size="11">[24][40]</text>
+        <text x="600" y="106" fill="#1e293b" font-size="11">[24][40]</text>
 
         <line x1="235" y1="158" x2="285" y2="158" stroke="#90a4ae" stroke-width="2.5"/>
         <rect x="285" y="132" width="285" height="52" rx="9" fill="#fff" stroke="#b4552d" stroke-width="1.6"/>
         <text x="300" y="154" fill="#b4552d" font-weight="bold" font-size="12.5">③ 超交换介导轨道激活</text>
         <text x="300" y="173" fill="#37474f" font-size="11">Ni-t₂g/O-2p 还原耦合（Be 掺杂）</text>
-        <text x="600" y="164" fill="#5b6b7c" font-size="11">[25]</text>
+        <text x="600" y="164" fill="#1e293b" font-size="11">[25]</text>
 
         <line x1="235" y1="216" x2="285" y2="216" stroke="#90a4ae" stroke-width="2.5"/>
         <rect x="285" y="190" width="285" height="52" rx="9" fill="#fff" stroke="#b4552d" stroke-width="1.6"/>
         <text x="300" y="212" fill="#b4552d" font-weight="bold" font-size="12.5">④ 高熵"自旋门"调控</text>
         <text x="300" y="231" fill="#37474f" font-size="11">O3-NaNi₁/₃Fe₁/₃Mn₁/₃O₂ 高熵化</text>
-        <text x="600" y="222" fill="#5b6b7c" font-size="11">[26]</text>
+        <text x="600" y="222" fill="#1e293b" font-size="11">[26]</text>
 
         <line x1="235" y1="274" x2="285" y2="274" stroke="#90a4ae" stroke-width="2.5"/>
         <rect x="285" y="248" width="285" height="52" rx="9" fill="#fff" stroke="#b4552d" stroke-width="1.6"/>
         <text x="300" y="270" fill="#b4552d" font-weight="bold" font-size="12.5">⑤ 磁阻挫释放 / 抑制 O₂</text>
         <text x="300" y="289" fill="#37474f" font-size="11">Li₂RuO₃ 阻挫演化与 (O₂)ⁿ⁻ 生成</text>
-        <text x="600" y="280" fill="#5b6b7c" font-size="11">[22][27]</text>
+        <text x="600" y="280" fill="#1e293b" font-size="11">[22][27]</text>
 
         <line x1="235" y1="322" x2="285" y2="322" stroke="#90a4ae" stroke-width="2.5"/>
         <rect x="285" y="296" width="285" height="52" rx="9" fill="#fff" stroke="#b4552d" stroke-width="1.6"/>
         <text x="300" y="318" fill="#b4552d" font-weight="bold" font-size="12.5">⑥ 共价性 / 局域构型调控</text>
         <text x="300" y="337" fill="#37474f" font-size="11">Na–O–□、Na–O–Li、Cu/Mg/B 掺杂</text>
-        <text x="600" y="328" fill="#5b6b7c" font-size="11">[8][10]-[13][43]</text>
+        <text x="600" y="328" fill="#1e293b" font-size="11">[8][10]-[13][43]</text>
       </g>
     </svg>
     <figcaption><b>图 2</b>　钠电层状氧化物中磁矩/自旋态调控的技术路线全景（图中编号对应正文第 3.1–3.6 节；文献角标见第 9 节）。</figcaption>
@@ -451,14 +473,14 @@
       <text x="115" y="135" font-size="22" fill="#b4552d">↑</text>
       <text x="160" y="135" font-size="22" fill="#b4552d">↑</text>
       <text x="205" y="135" font-size="22" fill="#b4552d">↑</text>
-      <text x="140" y="172" text-anchor="middle" font-size="11.5" fill="#5b6b7c">相邻氧空穴自旋未配对</text>
+      <text x="140" y="172" text-anchor="middle" font-size="11.5" fill="#1e293b">相邻氧空穴自旋未配对</text>
       <text x="140" y="205" text-anchor="middle" font-size="12" fill="#b4552d" font-weight="bold">磁阻挫 ↑↑</text>
-      <text x="140" y="240" text-anchor="middle" font-size="11" fill="#5b6b7c">（自旋交换竞争无法同时满足）</text>
+      <text x="140" y="240" text-anchor="middle" font-size="11" fill="#1e293b">（自旋交换竞争无法同时满足）</text>
 
       <path d="M268 150 L322 150" stroke="#90a4ae" stroke-width="3" marker-end="url(#arrow)"/>
       <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
         <path d="M0,0 L8,3 L0,6 Z" fill="#90a4ae"/></marker></defs>
-      <text x="295" y="138" text-anchor="middle" font-size="11" fill="#5b6b7c">释放阻挫</text>
+      <text x="295" y="138" text-anchor="middle" font-size="11" fill="#1e293b">释放阻挫</text>
 
       <rect x="330" y="30" width="240" height="240" rx="12" fill="#fbf1ea" stroke="#e2b795"/>
       <text x="450" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#b4552d">O–O 二聚 / 分子 O₂</text>
@@ -468,12 +490,12 @@
       <text x="415" y="146" text-anchor="middle" font-size="12" fill="#b4552d">O</text>
       <text x="455" y="146" text-anchor="middle" font-size="12" fill="#b4552d">O</text>
       <line x1="435" y1="140" x2="435" y2="140" stroke="#b4552d"/>
-      <text x="450" y="185" text-anchor="middle" font-size="11.5" fill="#5b6b7c">自旋配对（σ 键）→ 阻挫消除</text>
+      <text x="450" y="185" text-anchor="middle" font-size="11.5" fill="#1e293b">自旋配对（σ 键）→ 阻挫消除</text>
       <text x="450" y="215" text-anchor="middle" font-size="11.5" fill="#b4552d">不可逆累积 → 晶格畸变 / TM 迁移</text>
       <text x="450" y="242" text-anchor="middle" font-size="11.5" fill="#b4552d">→ 电压滞后 / 产气 / 容量衰减</text>
 
       <path d="M578 150 L632 150" stroke="#90a4ae" stroke-width="3" marker-end="url(#arrow)"/>
-      <text x="605" y="138" text-anchor="middle" font-size="11" fill="#5b6b7c">磁矩调控</text>
+      <text x="605" y="138" text-anchor="middle" font-size="11" fill="#1e293b">磁矩调控</text>
 
       <rect x="640" y="30" width="240" height="240" rx="12" fill="#eaf3f6" stroke="#a9cdd8"/>
       <text x="760" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f5c73">自旋态 / 磁耦合设计</text>

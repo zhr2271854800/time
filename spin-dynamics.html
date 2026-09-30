@@ -6,8 +6,8 @@
 <title>自旋电化学与拓扑动力学：钠电层状正极多场耦合、合成热力学与全生命周期退化图谱</title>
 <style>
 :root {
-  --ink: #1c2530;
-  --muted: #5b6b7c;
+  --ink: #0a0f1a;
+  --muted: #1e293b;
   --accent: #047857;
   --accent2: #0f766e;
   --bg: #f7f8f6;
@@ -44,7 +44,7 @@ header.hero {
   letter-spacing: .22em;
   font-size: 13px;
   text-transform: uppercase;
-  opacity: .9;
+  opacity: 1;
   font-family: system-ui, sans-serif;
   color: #a7f3d0;
   margin-bottom: 12px;
@@ -58,14 +58,14 @@ h1 {
 }
 .subtitle {
   font-size: 17px;
-  opacity: .95;
+  opacity: 1;
   margin: 0 0 18px;
   color: #e2e8f0;
 }
 .meta {
   font-family: system-ui, sans-serif;
   font-size: 13.5px;
-  opacity: .88;
+  opacity: 1;
 }
 .meta span {
   margin-right: 22px;
@@ -272,6 +272,28 @@ code {
   font-size: 0.9em;
   color: #065f46;
 }
+
+  /* High-Contrast Non-Grey Text Overrides */
+  body {
+    color: #0f172a !important;
+  }
+  .wrap p, .wrap li, .wrap td, .wrap th, .wrap dd, .wrap dt,
+  .faustian-desc, .field-desc, .ref-list, figcaption, .keywords,
+  label, .readout-lbl, section p, section li, section td, section dd, section dt,
+  .abstract, .abstract p, .callout p, nav.toc li, nav.toc a {
+    color: #0f172a !important;
+  }
+  header.hero, header.hero * {
+    color: #ffffff !important;
+  }
+  header.hero .kicker, header.hero .subtitle {
+    color: #fef08a !important;
+    opacity: 1 !important;
+  }
+  header.hero .meta, header.hero .meta * {
+    color: #f8fafc !important;
+    opacity: 1 !important;
+  }
 </style>
 </head>
 <body>
