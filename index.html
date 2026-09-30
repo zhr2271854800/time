@@ -105,26 +105,55 @@
     body{font-size:15.5px;}
     table{font-size:13px;}
   }
+
+  /* Modern High-End Typography & Font Smoothing Patch */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    letter-spacing: 0.015em;
+  }
+  body.serif-font {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", serif !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif !important;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+  }
+  code, pre, .mono {
+    font-family: "JetBrains Mono", Consolas, Menlo, Monaco, "Courier New", monospace !important;
+  }
+  p {
+    text-align: justify;
+    line-height: 1.85 !important;
+  }
 </style>
 </head>
 <body>
-<nav id="top-paper-nav" style="background:#090d16; color:#fff; padding:10px 20px; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:13px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border-bottom:2px solid #10b981; position:sticky; top:0; z-index:10000; box-shadow:0 4px 18px rgba(0,0,0,0.5);">
+<nav id="top-paper-nav" style="background:#090d16; color:#fff; padding:10px 20px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif; font-size:13px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border-bottom:2px solid #10b981; position:sticky; top:0; z-index:10000; box-shadow:0 4px 18px rgba(0,0,0,0.5);">
   <div style="font-weight:700; display:flex; align-items:center; gap:8px;">
-    <span>⚡ 钠电正极磁矩与晶格氧前沿文库 (4部曲全集)</span>
+    <span>⚡ 钠电正极磁矩文库</span>
   </div>
   <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
     <a href="index.html" style="color:#fff; background:#b4552d; text-decoration:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); transition:all 0.2s;">
-      📖 篇一：调研综述 (矢量图版)
+      📖 篇一：调研综述 (矢量图)
     </a>
     <a href="outlook.html" style="color:#94a3b8; background:rgba(255,255,255,0.06); text-decoration:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); transition:all 0.2s;">
-      📄 篇二：机理、策略与展望 (理论版)
+      📄 篇二：机理与展望 (理论版)
     </a>
     <a href="cost-of-spin.html" style="color:#94a3b8; background:rgba(255,255,255,0.06); text-decoration:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); transition:all 0.2s;">
       ⚡ 篇三：自旋的代价 (前线账本)
     </a>
     <a href="spin-dynamics.html" style="color:#94a3b8; background:rgba(255,255,255,0.06); text-decoration:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); transition:all 0.2s;">
-      🌐 篇四：自旋电化学与拓扑动力学
+      🌐 篇四：拓扑动力学
     </a>
+    <div style="display:inline-flex; align-items:center; gap:4px; margin-left:6px; padding-left:8px; border-left:1px solid rgba(255,255,255,0.2);">
+      <button id="btn-toggle-font" title="切换黑体/宋体" style="background:rgba(255,255,255,0.1); color:#cbd5e1; border:1px solid rgba(255,255,255,0.15); padding:3px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔤 黑体</button>
+      <button id="btn-font-minus" title="减小字号" style="background:rgba(255,255,255,0.1); color:#cbd5e1; border:1px solid rgba(255,255,255,0.15); padding:3px 7px; border-radius:4px; font-size:11.5px; cursor:pointer;">A-</button>
+      <button id="btn-font-plus" title="加大字号" style="background:rgba(255,255,255,0.1); color:#cbd5e1; border:1px solid rgba(255,255,255,0.15); padding:3px 7px; border-radius:4px; font-size:11.5px; cursor:pointer;">A+</button>
+    </div>
   </div>
 </nav>
 
@@ -606,5 +635,52 @@
 </footer>
 
 </div>
+
+<script id="typography-controls-script">
+(function() {
+  function initTypeControls() {
+    var btnFont = document.getElementById('btn-toggle-font');
+    var btnSizePlus = document.getElementById('btn-font-plus');
+    var btnSizeMinus = document.getElementById('btn-font-minus');
+    
+    var currentSize = 16;
+    
+    if (btnFont) {
+      btnFont.addEventListener('click', function() {
+        document.body.classList.toggle('serif-font');
+        var isSerif = document.body.classList.contains('serif-font');
+        btnFont.innerText = isSerif ? '🔤 宋体' : '🔤 黑体';
+        localStorage.setItem('preferred-font-serif', isSerif ? '1' : '0');
+      });
+      if (localStorage.getItem('preferred-font-serif') === '1') {
+        document.body.classList.add('serif-font');
+        btnFont.innerText = '🔤 宋体';
+      }
+    }
+    
+    if (btnSizePlus) {
+      btnSizePlus.addEventListener('click', function() {
+        if (currentSize < 22) {
+          currentSize += 1;
+          document.body.style.fontSize = currentSize + 'px';
+        }
+      });
+    }
+    if (btnSizeMinus) {
+      btnSizeMinus.addEventListener('click', function() {
+        if (currentSize > 13) {
+          currentSize -= 1;
+          document.body.style.fontSize = currentSize + 'px';
+        }
+      });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTypeControls);
+  } else {
+    initTypeControls();
+  }
+})();
+</script>
 </body>
 </html>
