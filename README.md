@@ -3,17 +3,20 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Online%20Review-0f5c73?style=flat-square&logo=github)](https://zhr2271854800.github.io/time/)
 [![Field](https://img.shields.io/badge/Field-Solid%20State%20Chemistry%20%7C%20Battery%20Science-b4552d?style=flat-square)]()
-[![License](https://img.shields.io/badge/License-Academic%20Open-gray?style=flat-square)]()
+[![Papers](https://img.shields.io/badge/Reviews-2%20Interactive%20Editions-8b1e3f?style=flat-square)]()
 
 ---
 
-## 📖 在线阅读与核心文档入口
+## 📖 在线阅读与两篇综述直达入口
 
-* 🌐 **网页交互在线精读（推荐）**：  
-  👉 **[https://zhr2271854800.github.io/time/](https://zhr2271854800.github.io/time/)**  
-  *(GitHub Pages 自动部署，内嵌自适应排版、双栏交互目录、SVG 高清矢量机理图与完备文献引用)*
-* 📄 **本地 HTML 交互版**：[`磁矩调控钠电正极层氧综述.html`](./磁矩调控钠电正极层氧综述.html)
-* 📝 **完整文献综述报告**：[`磁矩调控钠电正极层氧调研综述.md`](./磁矩调控钠电正极层氧调研综述.md)
+本仓库包含**两篇针对钠电正极磁矩与晶格氧氧化还原的深度前沿综述**（均已部署在线交互版，顶部附带一键无缝切换导航条）：
+
+| 综述报告 | 特色与重点 | 🌐 在线交互阅读链接 (GitHub Pages) | 📄 本地 HTML 链接 |
+|---|---|---|---|
+| **篇一：《磁矩调控在钠离子电池层状氧化物正极氧（阴离子）氧化还原中的研究进展——调研综述》** | 全彩自适应版式、内嵌高清 SVG 矢量晶体场与轨道能级图、双栏交互目录 | 👉 **[在线阅读（篇一·矢量图版）](https://zhr2271854800.github.io/time/index.html)** | [`磁矩调控钠电正极层氧综述.html`](./磁矩调控钠电正极层氧综述.html) |
+| **篇二：《磁矩调控钠离子电池层状正极晶格氧氧化还原：机理、策略与展望》** | 侧重电子结构物理本质、Goodenough 规则、超交换与铁电/磁电界面协同 | 👉 **[在线阅读（篇二·理论深度版）](https://zhr2271854800.github.io/time/outlook.html)** | [`磁矩调控钠电正极层氧调研综述.html`](./磁矩调控钠电正极层氧调研综述.html) |
+
+> 📝 **纯文本源稿**：[`磁矩调控钠电正极层氧调研综述.md`](./磁矩调控钠电正极层氧调研综述.md)（含完整参考文献列表）
 
 ---
 
@@ -49,44 +52,26 @@
 
 ---
 
-## 🗂️ 综述核心框架与章节划分
-
-| 章节 | 核心主题 | 关键讨论内容 |
-|---|---|---|
-| **01 引言** | 为什么把“磁矩”写进正极设计 | 传统层氧瓶颈、氧空穴失稳本质、磁矩作为电子结构调控抓手 |
-| **02 理论基础** | 电子结构、能带与超交换 | Goodenough-Kanamori 规则、Zaanen-Sawatzky-Allen (ZSA) 理论、配体空穴化学 |
-| **03 调控策略** | 磁矩与自旋态工程实操路径 | 铁介导氧化还原、高低自旋态工程、界面磁电耦合（压电/铁电诱导）、超晶格与高熵构型 |
-| **04 实验表征** | 把“磁”转化为可观测量 | 磁 Compton 散射 (MCS)、SQUID/PPMS 变温磁化率、原位 EPR/ESR、XAS/XMCD、mRIXS |
-| **05 构效关联** | 结构—磁矩—电化学闭环 | 循环稳定性、电压滞后消除、全电池倍率与大倍率快充响应 |
-| **06 展望** | 未来高可逆层氧材料设计准则 | 磁-电多物理场耦合原位工况表征、AI 辅助自旋态逆向材料设计 |
-
----
-
 ## 📁 仓库目录结构
 
 ```text
-├── index.html                   # 网页展示主入口（GitHub Pages 自动挂载）
-├── 磁矩调控钠电正极层氧综述.html   # 完整内嵌样式与矢量图的独立交互综述
-├── 磁矩调控钠电正极层氧调研综述.md # 综述 Markdown 纯文本规范源稿
-├── README.md                    # 本学术项目索引与理论框架说明
-└── .gitignore                   # Git 忽略配置
+C:\Users\Administrator\time\
+├── index.html                     # 网页展示主入口（默认呈现篇一·矢量图版）
+├── review.html                    # 篇一英文直达别名
+├── 磁矩调控钠电正极层氧综述.html     # 篇一独立交互单文件 (68 KB，含矢量图)
+├── outlook.html                   # 篇二英文直达别名
+├── 磁矩调控钠电正极层氧调研综述.html # 篇二独立交互单文件 (51 KB，理论深度版)
+├── 磁矩调控钠电正极层氧调研综述.md   # 综述 Markdown 纯文本规范源稿
+├── README.md                      # 本学术项目索引与理论框架说明
+├── .nojekyll                      # 保证 GitHub Pages 静态直出
+└── .gitignore                     # Git 忽略配置
 ```
 
 ---
 
 ## 🛠️ 本地运行与浏览
 
-本项目文件均为标准轻量化格式，无需搭建复杂的编译构建环境：
-
 1. **直接双击浏览器打开**：
-   直接使用 Chrome / Edge 打开 [`磁矩调控钠电正极层氧综述.html`](./磁矩调控钠电正极层氧综述.html) 或 [`index.html`](./index.html) 即可体验完整图文排版。
-2. **本地微服务预览**：
-   ```bash
-   python -m http.server 8000
-   # 浏览器访问 http://localhost:8000
-   ```
-
----
-
-*作者：zhr2271854800*  
-*更新日期：2026 年 9 月*
+   在 Windows 资源管理器中双击打开任意 `.html` 文件即可立即离线精读。
+2. **在线直接阅读**：
+   访问部署好的站点：👉 **[https://zhr2271854800.github.io/time/](https://zhr2271854800.github.io/time/)**
