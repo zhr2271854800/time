@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>磁矩调控钠离子电池层状正极晶格氧氧化还原：机理、策略与展望</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    :root {
+      --ink: #1a1f2e;
+      --muted: #5c6578;
+      --line: #e4e8f0;
+      --paper: #f7f5f0;
+      --card: #ffffff;
+      --accent: #8b1e3f;
+      --accent-soft: #f4e8ec;
+      --teal: #1f6f64;
+      --gold: #b08d3e;
+      --sidebar: 280px;
+      --shadow: 0 10px 40px rgba(26, 31, 46, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Noto Serif SC", "Source Serif 4", "Songti SC", serif;
+      line-height: 1.85;
+      font-size: 17px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .layout {
+      display: grid;
+      grid-template-columns: var(--sidebar) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+    nav.toc {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      background: #141824;
+      color: #d7dce8;
+      padding: 28px 20px 40px;
+    }
+    nav.toc h2 {
+      margin: 0 0 6px;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8b93a7;
+      font-weight: 600;
+    }
+    nav.toc p.brand {
+      margin: 0 0 22px;
+      font-size: 15px;
+      color: #fff;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+    nav.toc a {
+      display: block;
+      color: #c9d0de;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      line-height: 1.45;
+      text-decoration: none;
+    }
+    nav.toc a:hover, nav.toc a.active { background: #232a3b; color: #fff; }
+    nav.toc a.sub { padding-left: 18px; color: #9aa3b8; font-size: 12.5px; }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 40px 96px;
+    }
+    header.hero {
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 36px 40px 28px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--accent), var(--gold));
+    }
+    .kicker {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 28px;
+      line-height: 1.45;
+      margin: 0 0 18px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .abstract, .keywords, section.card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 28px 32px;
+      margin-bottom: 22px;
+    }
+    .abstract h2, .keywords strong {
+      color: var(--accent);
+      font-size: 15px;
+      letter-spacing: 0.12em;
+      margin: 0 0 10px;
+    }
+    .keywords { font-size: 15px; color: var(--muted); }
+    .keywords span {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin: 4px 6px 0 0;
+      font-size: 13px;
+    }
+    h2.sec {
+      font-size: 22px;
+      margin: 8px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    h3 {
+      font-size: 18px;
+      margin: 26px 0 10px;
+      color: #2b3348;
+    }
+    p { margin: 0 0 14px; }
+    ul, ol { margin: 0 0 16px; padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 700; }
+    .cite {
+      font-size: 11px;
+      vertical-align: super;
+      line-height: 0;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 1px;
+      font-family: "JetBrains Mono", monospace;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      margin: 12px 0 20px;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #1f2433;
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    tr:nth-child(even) td { background: #fbfaf7; }
+    .callout {
+      border-left: 4px solid var(--teal);
+      background: #eef6f5;
+      padding: 12px 16px;
+      margin: 14px 0 18px;
+      color: #244844;
+    }
+    .warn {
+      border-left-color: var(--gold);
+      background: #faf4e6;
+      color: #5c4818;
+    }
+    .scheme {
+      background: #141824;
+      color: #e8edf7;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      line-height: 1.55;
+      padding: 22px 20px;
+      overflow-x: auto;
+      border-radius: 8px;
+      margin: 8px 0 18px;
+      white-space: pre;
+    }
+    .channels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0 18px;
+    }
+    .ch {
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+      background: #fff;
+    }
+    .ch b { display: block; color: var(--accent); margin-bottom: 4px; font-size: 14px; }
+    .ch span { font-size: 14px; color: var(--muted); }
+    .refs p {
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0 0 10px;
+      padding-left: 2.2em;
+      text-indent: -2.2em;
+      color: #2c3344;
+    }
+    .refs p:target {
+      background: #fff4d6;
+      outline: 2px solid var(--gold);
+      padding: 6px 8px 6px calc(2.2em + 8px);
+      text-indent: -2.2em;
+    }
+    footer.note {
+      color: var(--muted);
+      font-size: 13.5px;
+      border-top: 1px dashed var(--line);
+      padding-top: 16px;
+      margin-top: 8px;
+    }
+    .topbar {
+      display: none;
+    }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      nav.toc { display: none; }
+      .topbar {
+        display: block;
+        background: #141824;
+        color: #fff;
+        padding: 14px 18px;
+        font-weight: 700;
+      }
+      main { padding: 24px 16px 72px; }
+      header.hero, .abstract, .keywords, section.card { padding: 20px 18px; }
+      h1 { font-size: 22px; }
+      .channels { grid-template-columns: 1fr; }
+    }
+    @media print {
+      nav.toc, .topbar { display: none !important; }
+      .layout { display: block; }
+      body { background: #fff; }
+      header.hero, .abstract, section.card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">磁矩调控 · 钠电层状正极 · 晶格氧综述</div>
+  <div class="layout">
+    <nav class="toc">
+      <h2>Contents</h2>
+      <p class="brand">磁矩调控与钠电层氧</p>
+      <a href="#abs">摘要</a>
+      <a href="#s1">1 引言</a>
+      <a href="#s2">2 电子结构基础</a>
+      <a class="sub" href="#s21">2.1 氧活性起源</a>
+      <a class="sub" href="#s22">2.2 氧空穴与磁矩</a>
+      <a class="sub" href="#s23">2.3 自旋态与 π 相互作用</a>
+      <a href="#s3">3 磁矩作为描述符</a>
+      <a href="#s4">4 调控策略</a>
+      <a class="sub" href="#s41">4.1 铁介导</a>
+      <a class="sub" href="#s42">4.2 自旋态工程</a>
+      <a class="sub" href="#s43">4.3 蜂窝超晶格</a>
+      <a class="sub" href="#s44">4.4 氧空位与 Fe 迁移</a>
+      <a class="sub" href="#s45">4.5 界面磁电耦合</a>
+      <a class="sub" href="#s46">4.6 高熵与成键</a>
+      <a class="sub" href="#s47">4.7 层错与钠含量</a>
+      <a href="#s5">5 表征方法</a>
+      <a href="#s6">6 机制图谱</a>
+      <a href="#s7">7 开放问题</a>
+      <a href="#s8">8 设计原则与展望</a>
+      <a href="#refs">参考文献</a>
+    </nav>
+    <main>
+      <header class="hero">
+        <div class="kicker">Literature Review · Sodium-ion Batteries</div>
+        <h1>磁矩调控钠离子电池层状正极晶格氧氧化还原：机理、策略与展望</h1>
+        <div class="meta">调研综述 · 含 50 条引用文献 · 聚焦局域磁矩、自旋态与晶格氧氧化还原的耦合</div>
+      </header>
+
+      <section class="abstract" id="abs">
+        <h2>摘要</h2>
+        <p>层状过渡金属氧化物是钠离子电池（SIB）最具产业化前景的正极之一。激活晶格氧氧化还原（lattice oxygen redox, LOR）可突破过渡金属（TM）阳离子氧化还原的容量上限，但氧空穴局域化、O–O 二聚、氧气释放与 TM 迁移常导致电压滞后与循环衰减。TM 的局域磁矩（spin magnetic moment）直接反映 $d$ 电子自旋态、TM–O 杂化强度与氧配体空穴浓度，因而成为调控层氧活性与可逆性的关键电子结构参量。本文从电子结构出发，梳理磁矩—自旋态—TM–O 共价性—晶格氧氧化还原之间的物理关联；综述铁介导、自旋态工程、界面磁电耦合、蜂窝超晶格与高熵构型等磁矩相关调控策略；讨论 Compton 散射、穆斯堡尔谱、SQUID、mRIXS 等表征手段；并展望面向高可逆层氧正极的材料设计原则。</p>
+      </section>
+      <section class="keywords">
+        <strong>关键词</strong><br />
+        <span>钠离子电池</span><span>层状氧化物正极</span><span>晶格氧氧化还原</span><span>磁矩调控</span><span>自旋态</span><span>TM–O 杂化</span><span>磁电耦合</span>
+      </section>
+
+      <section class="card" id="s1">
+        <h2 class="sec">1 引言</h2>
+        <p>大规模储能对低成本、资源可持续的二次电池提出刚性需求。钠资源丰度远高于锂，使钠离子电池成为锂离子电池的重要补充路线<a class="cite" href="#ref-1">[1–4]</a>。层状氧化物 $\mathrm{Na}_x\mathrm{TMO}_2$（TM = Mn, Fe, Ni, Co, Cu 等）因二维 Na 扩散通道、可调组分与较高理论容量，长期占据正极研究的核心位置<a class="cite" href="#ref-1">[1,5,6]</a>。Delmas 按 Na 配位环境将层状相分为 P2、O3、P3、O2 等构型：P 表示棱柱位、O 表示八面体位，数字表示单胞中 TM 层堆垛数<a class="cite" href="#ref-5">[5]</a>。</p>
+        <p>传统电荷补偿主要依赖 TM 的 $3d$ 氧化还原。要进一步提升能量密度，必须把晶格氧纳入电荷补偿：即 $\mathrm{O}^{2-}\leftrightarrow\mathrm{O}^{(2-n)-}$<a class="cite" href="#ref-7">[7–11]</a>。这一阴离子氧化还原在富碱层状氧化物中已被广泛证实，并在 $\mathrm{Na}_{2/3}[\mathrm{Mg}_{0.28}\mathrm{Mn}_{0.72}]\mathrm{O}_2$ 等非富碱体系中同样被激活，说明关键在于形成非成键（或弱成键）O $2p$ 态<a class="cite" href="#ref-7">[7,12]</a>。问题随即出现：氧一旦被氧化，空穴若过度局域，易形成过氧/超氧物种乃至分子 $\mathrm{O}_2$，伴随 TM 层内迁移、超结构崩塌与电压滞后<a class="cite" href="#ref-8">[8,13,14]</a>。因此，<strong>如何在激活层氧的同时约束氧空穴、维持 TM–O 骨架</strong>，构成当前高比能钠电正极的核心矛盾。</p>
+        <p>磁矩调控正是针对这一矛盾提出的电子结构抓手。TM 离子的局域磁矩 $\mu$ 由未成对 $d$ 电子数与自旋态（高自旋 HS / 低自旋 LS / 中自旋 IS）决定，并强烈耦合于：</p>
+        <ul>
+          <li>TM–O 键的离子/共价比例与 $\pi$ 型 $t_{2g}$–O $2p$ 相互作用；</li>
+          <li>氧配体空穴（ligand hole）浓度与其空间分布；</li>
+          <li>Jahn–Teller 畸变、Fe/Mn 迁移势垒与层间滑移；</li>
+          <li>界面处的磁电耦合与电荷转移动力学。</li>
+        </ul>
+        <p>近期工作已从多个侧面把“磁”与“层氧”联系起来：Compton 散射直接测得 $\mathrm{Na}_x\mathrm{Fe}_{1/2}\mathrm{Mn}_{1/2}\mathrm{O}_2$ 中氧位磁化（约 $0.2\,\mu_\mathrm{B}/\mathrm{O}$），证明氧空穴本身带磁矩<a class="cite" href="#ref-15">[15]</a>；铁作为氧化还原媒介把晶格氧可逆性从 75% 提升到 99%，软包能量密度达 $206\,\mathrm{Wh\,kg}^{-1}$<a class="cite" href="#ref-16">[16]</a>；界面铁电–磁性协同与磁电耦合显著改善倍率与循环<a class="cite" href="#ref-17">[17,18]</a>。本文据此系统综述磁矩调控对钠电层状正极晶格氧的作用机制、实验策略与开放问题。</p>
+      </section>
+
+      <section class="card" id="s2">
+        <h2 class="sec">2 晶格氧氧化还原的电子结构基础</h2>
+        <h3 id="s21">2.1 层状正极中的氧活性起源</h3>
+        <p>在 $\mathrm{TMO}_6$ 八面体中，TM $3d$ 与 O $2p$ 按对称性杂化形成成键/反键分子轨道。电荷脱出时，电子优先从费米能级附近的态被抽走。若 TM–O 共价弱、存在 Na–O–A（A = Li, Mg, 空位等）构型，则部分 O $2p$ 轨道不与 TM 杂化，形成位于费米能级附近的非成键态，从而被氧化<a class="cite" href="#ref-7">[7,9–11]</a>。Maitra 等证明，$\mathrm{Na}_{2/3}[\mathrm{Mg}_{0.28}\mathrm{Mn}_{0.72}]\mathrm{O}_2$ 中 Mg 占据 TM 层即可激活氧氧化还原，且 Mg 残留在晶格中稳定氧，抑制氧气释放<a class="cite" href="#ref-7">[7]</a>。House 等进一步指出，蜂窝超结构在充电时易因分子 $\mathrm{O}_2$ 形成而崩塌，引起 TM 平面迁移与电压滞后；条带（ribbon）超结构可抑制该过程<a class="cite" href="#ref-8">[8]</a>。</p>
+        <p>mRIXS 提供了体相晶格氧氧化还原的直接指纹：O $K$ 边约 $523.7\,\mathrm{eV}$ 发射能量特征对应氧化态氧的 $2p$–$2p$ 带内激子，可与 TM–O 杂化峰（约 $525\,\mathrm{eV}$）分离<a class="cite" href="#ref-19">[19]</a>。Dai 等据此定量：$\mathrm{Na}_{2/3}\mathrm{Mg}_{1/3}\mathrm{Mn}_{2/3}\mathrm{O}_2$ 首圈晶格氧可逆性约 79%，100 圈后容量保持 87%；对比富锂材料则容量保持更差，说明“晶格氧氧化还原”必须与表面氧释放、电解液分解严格区分<a class="cite" href="#ref-19">[19]</a>。</p>
+
+        <h3 id="s22">2.2 氧空穴、配体空穴与磁矩</h3>
+        <p>孤立 $\mathrm{O}^{2-}$ 为闭壳层 $2p^6$，磁矩为零。一旦形成氧空穴（ligand hole，$\underline{L}$），氧位出现未配对自旋，产生可观的氧磁矩。Kothalawala 等对 $\mathrm{Na}_x\mathrm{Fe}_{1/2}\mathrm{Mn}_{1/2}\mathrm{O}_2$ 的磁 Compton 剖面拟合给出约 5% 的 O $2p$ 磁贡献；DFT 自旋密度显示 sodiated 相中氧磁矩可达 $0.2\,\mu_\mathrm{B}$/O<a class="cite" href="#ref-15">[15]</a>。Bader 电荷表明，从 P2（$x=2/3$）到 O2（$x=2/9$）脱钠时，80.5% 的额外电荷落在氧上，Fe、Mn 仅贡献较小部分<a class="cite" href="#ref-15">[15]</a>。</p>
+        <div class="callout">层氧氧化还原在动量空间与自旋空间都留下可测量的磁指纹。磁矩不再只是 TM 的附属量，而是氧空穴浓度的探针。</div>
+        <p>这一图景与锂电正极中的配体空穴化学一致：高共价 Ni–O、Co–O 体系中，名义上的 $\mathrm{Ni}^{4+}$/$\mathrm{Co}^{4+}$ 往往更接近 $\mathrm{Ni}^{3+}\underline{L}$/$\mathrm{Co}^{3+}\underline{L}$<a class="cite" href="#ref-10">[10,11]</a>。钠电层状正极中 Fe<sup>4+</sup>、Ni<sup>4+</sup> 同样处于强相关、强杂化区间，局域磁矩的大小与符号直接反映空穴是落在 TM $d$ 带还是 O $2p$ 带。</p>
+
+        <h3 id="s23">2.3 自旋态、磁交换与 TM–O π 相互作用</h3>
+        <p>八面体场中，$t_{2g}$ 与 $e_g$ 的占据方式决定自旋态：</p>
+        <table>
+          <thead>
+            <tr><th>离子</th><th>典型自旋</th><th>理想自旋磁矩</th><th>与氧的关联</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>HS $\mathrm{Fe}^{3+}$ ($t_{2g}^3 e_g^2$)</td><td>$S=5/2$</td><td>$5\,\mu_\mathrm{B}$</td><td>弱 $\pi$ 杂化，Fe–O 偏离子；易发生层间迁移</td></tr>
+            <tr><td>LS $\mathrm{Fe}^{3+}$ ($t_{2g}^5$)</td><td>$S=1/2$</td><td>$1\,\mu_\mathrm{B}$</td><td>更强共价，抑制 Jahn–Teller，但较少见于层状氧化物</td></tr>
+            <tr><td>HS $\mathrm{Fe}^{4+}$ ($t_{2g}^3 e_g^1$)</td><td>$S=2$</td><td>$4\,\mu_\mathrm{B}$</td><td>强 Jahn–Teller，且与 O $2p$ 强烈杂化，是氧媒介的核心价态</td></tr>
+            <tr><td>HS $\mathrm{Mn}^{3+}$ ($t_{2g}^3 e_g^1$)</td><td>$S=2$</td><td>$4\,\mu_\mathrm{B}$</td><td>经典 Jahn–Teller 离子，驱动 P′2 正交畸变</td></tr>
+            <tr><td>$\mathrm{Mn}^{4+}$ ($t_{2g}^3$)</td><td>$S=3/2$</td><td>$3\,\mu_\mathrm{B}$</td><td>相对惰性，常作为结构支柱</td></tr>
+            <tr><td>HS $\mathrm{Ni}^{2+}$ ($t_{2g}^6 e_g^2$)</td><td>$S=1$</td><td>$2\,\mu_\mathrm{B}$</td><td>Ni<sup>2+</sup>/Ni<sup>4+</sup> 两电子反应，高压下触发氧活性</td></tr>
+            <tr><td>LS $\mathrm{Co}^{3+}$ ($t_{2g}^6$)</td><td>$S=0$</td><td>$0$</td><td>闭壳层，Co–O 共价强，常用于钉扎氧</td></tr>
+          </tbody>
+        </table>
+        <p>Goodenough–Kanamori 规则给出近邻磁交换与键角、轨道占据的关系。层状氧化物中面内 TM–O–TM 键角接近 90°，超交换与双交换并存。脱钠改变 TM 价态，从而改变磁有序：低钠含量时 TM 层倾向铁磁、高钠含量时转为反铁磁<a class="cite" href="#ref-15">[15,20]</a>。磁有序改变自旋极化的 TM–O 杂化通道，进而调制氧空穴的离域程度。Zhou 等报道通过强化层状正极中的 $\pi$ 型相互作用，可提升阴离子氧化还原可逆性<a class="cite" href="#ref-21">[21]</a>。<strong>调控磁矩，本质上是在调控哪些自旋通道被打开、氧空穴能走多远。</strong></p>
+      </section>
+
+      <section class="card" id="s3">
+        <h2 class="sec">3 磁矩作为层氧调控的描述符</h2>
+        <p>把磁矩提升为材料设计描述符，需要三条可操作的映射：</p>
+        <p><strong>(i) 磁矩 → 自旋态 → 轨道简并与畸变。</strong> HS $\mathrm{Mn}^{3+}$/$\mathrm{Fe}^{4+}$ 的 $e_g$ 单电子占据引起协同 Jahn–Teller 畸变，拉长 TM–O 键、削弱部分氧配位，使这些氧更易被氧化甚至脱出<a class="cite" href="#ref-6">[6,22]</a>。降低 HS 离子浓度（Mg/Li/Ti/Al 稀释、提高平均 Mn 价）即降低有效磁矩涨落，从而抑制畸变驱动的不可逆氧损失。</p>
+        <p><strong>(ii) 磁矩 → 配体空穴 → 氧氧化还原容量。</strong> 氧位磁矩是空穴的直接度量。Compton 差谱 $\Delta J(p)$ 可定量 O $2p$ 与 TM $3d$ 的相对贡献；Kothalawala 等拟合得到每个 Na 对应约 0.17 个 $3d$ 电子重排，同时 O $2p$ 为主要氧化还原轨道<a class="cite" href="#ref-15">[15]</a>。因此，<strong>适度的氧磁矩标志着可逆配体空穴；过大则预示过氧二聚与氧气释放。</strong></p>
+        <p><strong>(iii) 磁矩 → 价态柔性 → 化学媒介通道。</strong> Fe 具有 $\mathrm{Fe}^{2+}$/$\mathrm{Fe}^{3+}$/$\mathrm{Fe}^{4+}$ 多价柔性，各价态磁矩差异显著（HS $\mathrm{Fe}^{2+}$ $\sim 4\,\mu_\mathrm{B}$，HS $\mathrm{Fe}^{3+}$ $\sim 5\,\mu_\mathrm{B}$，HS $\mathrm{Fe}^{4+}$ $\sim 4\,\mu_\mathrm{B}$）。这种磁矩“摇摆”对应电子在 Fe $3d$ 与 O $2p$ 之间的化学（非电化学）交换，构成铁介导层氧可逆性的物理基础<a class="cite" href="#ref-16">[16]</a>。</p>
+        <p>从计算角度看，r<sup>2</sup>SCAN 等 meta-GGA 无需经验 $U$ 即可稳定高自旋构型，并给出与 Compton 剖面形状一致的磁动量密度<a class="cite" href="#ref-15">[15]</a>。PBE+$U$ 则对 $U$ 高度敏感，可能错误打开/关闭带隙、错判氧是否参与氧化还原<a class="cite" href="#ref-23">[23]</a>。设计层氧材料时，必须在 DFT 中显式处理自旋极化与磁构型。</p>
+      </section>
+
+      <section class="card" id="s4">
+        <h2 class="sec">4 磁矩相关的层氧调控策略</h2>
+
+        <h3 id="s41">4.1 铁介导：用 Fe 磁矩“搬运”氧电子</h3>
+        <p>Chu、Guo、Zhou、Lu 等在 <em>Nature Energy</em> 提出铁介导策略<a class="cite" href="#ref-16">[16]</a>。模型正极为 P2-$\mathrm{Na}_{2/3}\mathrm{Mn}_{7/12}\mathrm{Mg}_{1/4}\mathrm{Fe}_{1/6}\mathrm{O}_2$（NMMF）。机制可概括为双向化学电子交换：</p>
+        <ul>
+          <li><strong>充电：</strong> $\mathrm{Fe}^{3+}$ 先被电化学氧化为 $\mathrm{Fe}^{4+}$；$\mathrm{Fe}^{4+}$ 作为电子受体从晶格氧捕获电子，自身被化学还原回 $\mathrm{Fe}^{3+}$，同时氧被氧化为 $\mathrm{O}^{(2-n)-}$。</li>
+          <li><strong>放电：</strong> $\mathrm{Fe}^{3+}$ 被电化学还原为 $\mathrm{Fe}^{2+}$；$\mathrm{Fe}^{2+}$ 作为电子供体把电子回馈给氧化态氧，自身被氧化回 $\mathrm{Fe}^{3+}$，晶格氧恢复为 $\mathrm{O}^{2-}$。</li>
+        </ul>
+        <p>mRIXS 定量显示，无助剂对照 NMM 的晶格氧可逆性仅 75%，NMMF 达 99%，100 圈后仍约 98%<a class="cite" href="#ref-16">[16]</a>。穆斯堡尔谱捕捉到 Fe 价态在电化学路径之外的“异常”化学还原/氧化，与原位 Fe $K$-edge XANES 一致。扣式电池放电容量约 $220\,\mathrm{mAh\,g}^{-1}$；与硬碳匹配的 15.8 Ah 软包达到 $206\,\mathrm{Wh\,kg}^{-1}$，50 mA g<sup>−1</sup> 下 100 圈保持 87.8%<a class="cite" href="#ref-16">[16]</a>。</p>
+        <div class="callout">Fe 的价值在于其磁矩/价态柔性所承载的化学通道，而不只是 Fe<sup>3+</sup>/Fe<sup>4+</sup> 的电化学容量。磁矩柔性可用，结构柔性必须被锁住。</div>
+        <p>需注意权衡。Kim 等指出，Fe 在富 Mn P2 正极中同时促进氧氧化还原与 TM 溶出<a class="cite" href="#ref-24">[24]</a>。Zhang 等证明 NFM 中 Fe 向 Na 层不可逆迁移会制造欠配位氧、加剧氧损失；Ca/Sn 共掺通过提高迁移势垒抑制 Fe 迁出，在 4.5 V 下实现可逆氧氧化还原，软包 2000 圈保持 80.7%<a class="cite" href="#ref-25">[25]</a>。</p>
+
+        <h3 id="s42">4.2 自旋态与局域磁矩工程：掺杂改变 $d$ 占据</h3>
+        <p><strong>高自旋 Mn<sup>3+</sup> 稀释。</strong> Clément 等系统研究 P2-$\mathrm{Na}_{2/3}\mathrm{Mn}_{1-y}\mathrm{Mg}_y\mathrm{O}_2$，少量 Mg 即可平滑电位曲线、抑制协同 Jahn–Teller<a class="cite" href="#ref-26">[26]</a>。Li/Mg 共掺可同时激活 Na–O–Li 非成键氧态并钉扎层间距<a class="cite" href="#ref-27">[27,28]</a>；Cheng、Zhang 等的 Li 双位取代 P2-$\mathrm{Na}_{0.7}\mathrm{Li}_{0.03}[\mathrm{Mg}_{0.15}\mathrm{Li}_{0.07}\mathrm{Mn}_{0.75}]\mathrm{O}_2$ 给出 $266\,\mathrm{mAh\,g}^{-1}$ 与仅 1.2% 的体积变化，接近零应变<a class="cite" href="#ref-28">[28]</a>。</p>
+        <p><strong>强共价、低磁矩离子钉扎氧。</strong> Al<sup>3+</sup>（$d^0$，无磁矩）、Ti<sup>4+</sup>（$d^0$）、Nb<sup>5+</sup>、Sn<sup>4+</sup>、Ho<sup>3+</sup> 等形成强 M–O 共价键，降低 O $2p$ 能量、减弱表面氧活性。Zhao 等 Al/Ti 共掺 Fe/Mn 基正极，以强 Al–O、Ti–O 键稳定晶格氧并抑制 P2–OP4 滑移<a class="cite" href="#ref-29">[29]</a>。Meng 等原位共沉淀均匀掺 Ho，5C 循环 300 次保持 91.2%<a class="cite" href="#ref-30">[30]</a>。Li 等通过二次退火构筑表面岩盐相，软包 500 圈保持 92%<a class="cite" href="#ref-31">[31]</a>。磁矩调控在这里表现为“减磁”——降低有害的局域磁矩涨落。</p>
+        <p><strong>价态工程改变 Fe 磁矩深度。</strong> Song 等打破 Ni=Mn 化学计量，设计 $\mathrm{NaNi}_{0.35}\mathrm{Fe}_{0.225}\mathrm{Mn}_{0.425}\mathrm{O}_2$，使 Fe 氧化还原深度扩展到 $\mathrm{Fe}^{2.60+}/\mathrm{Fe}^{3.88+}$（每 Fe $1.28\,e^{-}$），可逆容量 $184.3\,\mathrm{mAh\,g}^{-1}$，正极能量密度 $596\,\mathrm{Wh\,kg}^{-1}$<a class="cite" href="#ref-32">[32]</a>。</p>
+
+        <h3 id="s43">4.3 蜂窝超晶格：磁有序模板约束氧空穴</h3>
+        <p>蜂窝超结构（如 LiMn<sub>6</sub>、MgMn<sub>6</sub>）在 TM 层内形成长程阳离子有序，既创造 Na–O–Li/Mg 非成键氧态，又为面内磁超交换提供周期性模板。Guo、Zhou 等在双蜂窝超晶格材料中实现首圈放电 $285.9\,\mathrm{mAh\,g}^{-1}$，1C 循环 50 圈保持 85.5%<a class="cite" href="#ref-33">[33]</a>。Liu、Bai 等构建 MgMn<sub>6</sub> 蜂窝超结构，1C 循环 100 圈保持 86.5%<a class="cite" href="#ref-34">[34]</a>。House 的对比实验给出反面教材：蜂窝超结构若因分子 $\mathrm{O}_2$ 形成而崩塌，将产生巨大电压滞后；条带超结构因抑制 Mn 无序而避免滞后<a class="cite" href="#ref-8">[8]</a>。Chu 等还报道位阻效应增强可逆晶格氧氧化还原并减小电压衰减<a class="cite" href="#ref-35">[35]</a>。</p>
+
+        <h3 id="s44">4.4 氧空位与可逆 Fe 迁移：动态磁矩支柱</h3>
+        <p>Wang 等通过氩气煅烧在 P2-$\mathrm{Na}_{0.67}\mathrm{Fe}_{0.3}\mathrm{Mn}_{0.7}\mathrm{O}_2$ 中原位制造体相氧空位，并包覆尖晶石 $\mathrm{MnFe}_2\mathrm{O}_4$<a class="cite" href="#ref-22">[22]</a>。氧空位降低 Mn 价以换取 Mn 容量，同时通过 Na–O–(TM 空位) 构型激活氧氧化还原；迁入 Na 位的 Fe 充当“临时支柱”抑制 TMO<sub>2</sub> 层滑移，放电时返回原位。材料在 0.1C 给出 $185.7\,\mathrm{mAh\,g}^{-1}$，300 圈保持 82.6%<a class="cite" href="#ref-22">[22]</a>。不可逆 Fe 迁移则制造永久欠配位氧，与 Zhang 等的失效机制一致<a class="cite" href="#ref-25">[25]</a>。</p>
+
+        <h3 id="s45">4.5 界面磁电耦合：用界面磁矩重构 CEI 与电荷转移</h3>
+        <p>体相磁矩调控解决氧空穴的热力学与局域结构问题；界面磁矩调控解决动力学与副反应问题。Zhang、Bai 等在 $\mathrm{NaNi}_{0.5}\mathrm{Mn}_{0.5}\mathrm{O}_2$ 表面构筑多铁层，激活铁电–磁性协同效应<a class="cite" href="#ref-17">[17]</a>：调控 CEI 成核生长，形成富 NaF 的薄界面层；均匀化界面 Na<sup>+</sup> 分布；减小 NiO<sub>6</sub> 局域畸变。半电池 1000 圈保持 82.1%，倍率可达 50–100C；全电池能量密度 $340.7\,\mathrm{Wh\,kg}^{-1}$<a class="cite" href="#ref-17">[17]</a>。Huang、Bai 等进一步报道在层状正极触发界面磁电耦合以提升高倍率钠存储<a class="cite" href="#ref-18">[18]</a>。</p>
+
+        <h3 id="s46">4.6 高熵与各向异性成键：平均磁矩涨落的统计稀释</h3>
+        <p>高熵层状氧化物把多种 TM（不同磁矩、不同费米能级）统计占据同一亚晶格，打破长程电荷/磁有序，抑制 Na<sup>+</sup>/空位有序与协同相变<a class="cite" href="#ref-36">[36–38]</a>。Cai、Huang 等的 O3 高熵正极在 20C 仍有 $85\,\mathrm{mAh\,g}^{-1}$，固态电池 5C 循环 400 圈保持 96%<a class="cite" href="#ref-36">[36]</a>。Wang 等通过各向异性成键调控，在熵稳定层状正极中实现可逆氧氧化还原<a class="cite" href="#ref-39">[39]</a>。高熵的磁学后果是：不同大小的局域磁矩随机分布，破坏长程磁有序，使氧空穴难以通过协同自旋通道凝聚为分子氧。</p>
+
+        <h3 id="s47">4.7 堆垛层错与初始钠含量：间接调制氧的磁/电荷环境</h3>
+        <p>肖荫果等通过碳酸盐前驱体在 P2-$\mathrm{Na}_{0.67}\mathrm{Ni}_{0.33}\mathrm{Mn}_{0.67}\mathrm{O}_2$ 中引入约 14% 单层 O3 型堆垛层错，把高压 $c$ 轴收缩从 22.2% 降至 13.7%，1C、2.0–4.3 V 循环 200 次保持 83.7%<a class="cite" href="#ref-40">[40]</a>。同一团队还通过把 O3 相初始 Na 从 1.0 降到 0.8，增大 $c$ 轴、推迟阴离子氧化还原介入<a class="cite" href="#ref-41">[41]</a>。这些结构手段改变了氧的次近邻电荷与层间静电，等效于改变氧空穴的化学势与磁极化环境。</p>
+      </section>
+
+      <section class="card" id="s5">
+        <h2 class="sec">5 表征：如何看见磁矩与层氧的耦合</h2>
+        <table>
+          <thead>
+            <tr><th>方法</th><th>探测对象</th><th>对层氧 / 磁矩的信息</th><th>代表工作</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>磁 Compton 散射</td><td>自旋动量密度 $J_\mathrm{mag}(p)$</td><td>分解 TM $3d$ 与 O $2p$ 磁贡献；测自旋磁矩</td><td><a href="#ref-15">[15]</a></td></tr>
+            <tr><td>普通 Compton 差谱 $\Delta J(p)$</td><td>价电子动量密度变化</td><td>定量 O $2p$ vs $3d$ 氧化还原轨道</td><td><a href="#ref-15">[15]</a></td></tr>
+            <tr><td>SQUID / VSM</td><td>总磁矩（自旋 + 轨道）</td><td>与 Compton 联用可分离轨道磁矩</td><td><a href="#ref-15">[15]</a></td></tr>
+            <tr><td><sup>57</sup>Fe 穆斯堡尔谱</td><td>Fe 价态、自旋态、磁超精细场</td><td>捕捉 Fe<sup>4+</sup>/Fe<sup>2+</sup> 媒介过程</td><td><a href="#ref-16">[16]</a></td></tr>
+            <tr><td>mRIXS (O $K$)</td><td>体相氧化态氧</td><td>晶格氧可逆性定量（与杂化峰分离）</td><td><a href="#ref-16">[16,19]</a></td></tr>
+            <tr><td>TM $L$ 边 iPFY</td><td>体相 TM $3d$ 价态</td><td>与氧定量联立，给出完整电荷补偿</td><td><a href="#ref-19">[19]</a></td></tr>
+            <tr><td>XMCD (O $K$, TM $L$)</td><td>元素分辨磁矩</td><td>直接测氧磁矩（尚待广泛开展）</td><td><a href="#ref-15">[15]</a></td></tr>
+            <tr><td>原位 XANES / EXAFS</td><td>价态与键长</td><td>Fe 异常化学还原/氧化；TM–O 键演化</td><td><a href="#ref-16">[16,25]</a></td></tr>
+            <tr><td>EPR</td><td>未配对自旋、氧空位</td><td>氧空穴与缺陷自旋</td><td><a href="#ref-25">[25]</a></td></tr>
+            <tr><td>中子衍射</td><td>磁结构、轻元素位置</td><td>长程磁有序与 Na/空位有序</td><td>—</td></tr>
+            <tr><td>DFT (r<sup>2</sup>SCAN, HSE06)</td><td>自旋密度、pDOS、氧空位形成能</td><td>磁构型、配体空穴、氧释放势垒</td><td><a href="#ref-15">[15,23,42]</a></td></tr>
+          </tbody>
+        </table>
+        <p>Kothalawala 等的实验尤其值得强调：同一套样品上，Compton 给出自旋磁矩 $0.365\,\mu_\mathrm{B}$/f.u.（$x=2/3$）与 $0.45\,\mu_\mathrm{B}$/f.u.（$x=1/3$），SQUID 给出总磁矩 $0.406$ 与 $0.768\,\mu_\mathrm{B}$/f.u.，说明低钠相轨道磁矩显著增大<a class="cite" href="#ref-15">[15]</a>。DFT 铁磁高自旋构型预测的磁矩远大于实验，因为实际 TM 层在高钠时倾向反铁磁，2.5 T 外场不足以完全极化。<strong>解读磁矩数据必须同时考虑磁有序类型。</strong></p>
+        <p>氧释放能方面，对 P2-$\mathrm{Na}_{2/3}\mathrm{Ni}_{1/3}\mathrm{Mn}_{2/3}\mathrm{O}_2$ 的库仑滴定与 HSE06 计算给出约 1.7 eV 的氧释放能，高于典型高镍锂电正极；高价 Ni 被指认为使晶格氧失稳的主因<a class="cite" href="#ref-42">[42]</a>。</p>
+      </section>
+
+      <section class="card" id="s6">
+        <h2 class="sec">6 机制图谱：从磁矩到层氧可逆性</h2>
+        <p>综合以上工作，可把磁矩调控对层氧的作用归纳为四条并行通道：</p>
+        <div class="channels">
+          <div class="ch"><b>通道 A · 配体空穴（容量）</b><span>空穴按 TM–O 杂化权重分配。O 2p 权重高则出现氧磁矩与额外容量。目标是维持离域配体空穴，避免 O–O 成键。</span></div>
+          <div class="ch"><b>通道 B · 自旋态 / 畸变（可逆性）</b><span>HS d<sup>4</sup>（Mn<sup>3+</sup>、Fe<sup>4+</sup>）驱动 Jahn–Teller 与层滑移。稀释高磁矩离子或用闭壳层离子钉扎，可降低不可逆氧损失。</span></div>
+          <div class="ch"><b>通道 C · 媒介通道（动力学可逆性）</b><span>Fe 等多价磁矩中心开辟化学电子通道，使氧化态氧在放电时被高效还原。必须抑制媒介离子的不可逆迁移。</span></div>
+          <div class="ch"><b>通道 D · 界面自旋–电荷（CEI 与倍率）</b><span>界面磁电 / 多铁耦合调控 CEI 化学与 Na<sup>+</sup> 通量，减少表面氧释放与电解液进攻。</span></div>
+        </div>
+        <p>四条通道在真实材料中纠缠：NMMF 同时利用通道 A（Mg 激活氧）与通道 C（Fe 媒介）；NFM+Ca/Sn 切断有害 Fe 迁移以保护通道 A；多铁包覆走通道 D。优秀设计往往是多通道协同。</p>
+        <div class="scheme">自旋态 / 局域磁矩 μ
+        |
+ --------------------------------
+ |              |               |
+配体空穴        JT 畸变 /        价态柔性
+(氧磁矩)        层滑移           (Fe 媒介)
+ |              |               |
+可逆 LOR      不可逆 O₂        化学电子通道
+ |              |               |
+ +---- 超晶格 / 高熵 / 钉扎 ----+
+                |
+          界面磁电耦合
+                |
+          稳定 CEI + 快 Na⁺</div>
+      </section>
+
+      <section class="card" id="s7">
+        <h2 class="sec">7 争议、局限与开放问题</h2>
+        <p><strong>（1）磁矩是因果还是伴随？</strong> 多数掺杂实验同时改变电荷、尺寸、电负性与磁矩，难以分离。需要在电荷相近、半径相近的离子对之间做对照（例如 HS vs LS 的同价离子），并结合元素分辨 XMCD。目前氧 $K$ 边 XMCD 在钠电层状正极上的系统数据仍然稀缺<a class="cite" href="#ref-15">[15]</a>。</p>
+        <p><strong>（2）实验磁化强度被磁有序掩盖。</strong> 反铁磁 TM 层使净磁矩远小于离子自旋磁矩之和。要用中子衍射或共振磁散射还原微观磁结构，才能把“调控磁矩”落到实处。</p>
+        <p><strong>（3）Fe 媒介与 Fe 迁移的边界。</strong> 同一 Fe 离子既可能是可逆氧媒介<a class="cite" href="#ref-16">[16]</a>，也可能是失效元凶<a class="cite" href="#ref-24">[24,25]</a>。临界变量尚未定量。原位穆斯堡尔谱与 operando 磁测量的结合，有望给出迁移与媒介的时间尺度分离。</p>
+        <p><strong>（4）计算对磁构型的敏感性。</strong> PBE+$U$ 与 r<sup>2</sup>SCAN 对同一正极给出相反的金属/绝缘体判断<a class="cite" href="#ref-15">[15,23]</a>。层氧是否被激活，强烈依赖于所选定的自旋态与磁有序。未来高通量筛选必须把磁矩作为一等公民输入。</p>
+        <p><strong>（5）界面磁电的微观机制仍偏唯象。</strong> 多铁包覆的电化学收益已被证明<a class="cite" href="#ref-17">[17,18]</a>，但自旋极化如何改变氧析出过渡态，仍缺原位谱学与第一性原理界面模型。</p>
+        <p><strong>（6）从扣式到软包的层氧可逆性衰减。</strong> NMMF 软包 $206\,\mathrm{Wh\,kg}^{-1}$、100 圈 87.8% 已属层氧正极的重要突破<a class="cite" href="#ref-16">[16]</a>；CS-NFM 软包 2000 圈 80.7% 则更多来自抑制 Fe 迁移<a class="cite" href="#ref-25">[25]</a>。层氧策略的日历寿命、产气与热安全性，仍需按储能标准评估。</p>
+      </section>
+
+      <section class="card" id="s8">
+        <h2 class="sec">8 设计原则与展望</h2>
+        <ol>
+          <li><strong>先锁骨架，再放层氧。</strong> 用闭壳层/强共价离子（Ti, Al, Sn, Nb, Ho）或超晶格支柱（MgMn<sub>6</sub>）把 TM 迁移势垒抬高，再引入非成键 O $2p$ 态。</li>
+          <li><strong>给层氧一条化学回路。</strong> 少量多价磁矩中心（典型为 Fe）可作为氧化还原媒介，但浓度、位点与电压窗口必须使迁移可逆。</li>
+          <li><strong>把氧磁矩当作过程量监控。</strong> 目标是充放电过程中氧磁矩可逆涨落。Compton / XMCD / mRIXS 三联用，可分别给出自旋、元素与化学态分辨。</li>
+          <li><strong>体相与界面分工。</strong> 体相管空穴热力学（自旋态、超结构、高熵），界面管动力学与副反应（磁电耦合、岩盐/尖晶石包覆、富氟 CEI）。</li>
+          <li><strong>计算必须自旋完备。</strong> 报告层氧活性时同时报告磁构型、局域磁矩与氧位自旋密度。</li>
+          <li><strong>面向应用的约束。</strong> 无钴、低镍、空气稳定与可放大合成，应与磁矩策略同时优化。铁介导与 Fe/Mn 基正极在成本上天然契合大规模储能。</li>
+        </ol>
+        <p>展望方面，几个方向可能在近年形成突破：operando 磁 Compton 与 O $K$-XMCD 直接跟踪循环中的氧磁矩；自旋极化电流或外磁场下的电化学作为因果检验；把多铁界面从氧化物包覆扩展到含氟/含磷人工 CEI；以及以局域磁矩和氧空穴形成能为目标函数的机器学习势，用于筛选“高可逆层氧、低净磁无序涨落”的组分空间。</p>
+        <div class="callout warn">磁矩调控把长期以来被当作“结构掺杂”的实验，翻译回 $d$ 电子自旋与 O $2p$ 空穴的语言。当这条语言被谱学与计算同时说清，钠电层状正极的晶格氧才可能从高容量但脆弱的负担，变成可工程化的能量密度来源。</div>
+      </section>
+
+      <section class="card refs" id="refs">
+        <h2 class="sec">参考文献</h2>
+        <p id="ref-1">[1] Zhao C, Wang Q, Yao Z, et al. Rational design of layered oxide materials for sodium-ion batteries. <em>Science</em>, 2020, 370: 708–711.</p>
+        <p id="ref-2">[2] Yabuuchi N, Kubota K, Dahbi M, Komaba S. Research development on sodium-ion batteries. <em>Chemical Reviews</em>, 2014, 114: 11636–11682.</p>
+        <p id="ref-3">[3] Chu S, Guo S, Zhou H. Advanced cobalt-free cathode materials for sodium-ion batteries. <em>Chemical Society Reviews</em>, 2021, 50: 13189–13235.</p>
+        <p id="ref-4">[4] Usiskin R, Lu Y, Popovic J, et al. Fundamentals, status and promise of sodium-based batteries. <em>Nature Reviews Materials</em>, 2021, 6: 1020–1035.</p>
+        <p id="ref-5">[5] Delmas C, Fouassier C, Hagenmuller P. Structural classification and properties of the layered oxides. <em>Physica B+C</em>, 1980, 99: 81–85.</p>
+        <p id="ref-6">[6] Yabuuchi N, Kajiyama M, Iwatate J, et al. P2-type Na<sub>x</sub>[Fe<sub>1/2</sub>Mn<sub>1/2</sub>]O<sub>2</sub> made from earth-abundant elements for rechargeable Na batteries. <em>Nature Materials</em>, 2012, 11: 512–517.</p>
+        <p id="ref-7">[7] Maitra U, House R A, Somerville J W, et al. Oxygen redox chemistry without excess alkali-metal ions in Na<sub>2/3</sub>[Mg<sub>0.28</sub>Mn<sub>0.72</sub>]O<sub>2</sub>. <em>Nature Chemistry</em>, 2018, 10: 288–295.</p>
+        <p id="ref-8">[8] House R A, Maitra U, Pérez-Osorio M A, et al. Superstructure control of first-cycle voltage hysteresis in oxygen-redox cathodes. <em>Nature</em>, 2020, 577: 502–508.</p>
+        <p id="ref-9">[9] Assat G, Tarascon J-M. Fundamental understanding and practical challenges of anionic redox activity in Li-ion batteries. <em>Nature Energy</em>, 2018, 3: 373–386.</p>
+        <p id="ref-10">[10] House R A, Rees G J, Pérez-Osorio M A, et al. First-cycle voltage hysteresis in Li-rich 3d cathodes associated with molecular O<sub>2</sub> trapped in the bulk. <em>Nature Energy</em>, 2020, 5: 777–785.</p>
+        <p id="ref-11">[11] Yang W, Devereaux T P. Anionic and cationic redox and interfaces in batteries: Advances from soft X-ray absorption spectroscopy to resonant inelastic scattering. <em>Journal of Power Sources</em>, 2018, 389: 188–197.</p>
+        <p id="ref-12">[12] Yabuuchi N, Hara R, Kubota K, et al. A new electrode material for rechargeable sodium batteries: P2-type Na<sub>2/3</sub>[Mg<sub>0.28</sub>Mn<sub>0.72</sub>]O<sub>2</sub> with anomalously high reversible capacity. <em>Journal of Materials Chemistry A</em>, 2014, 2: 16851–16855.</p>
+        <p id="ref-13">[13] House R A, Marie J-J, Pérez-Osorio M A, et al. The role of O<sub>2</sub> in O-redox cathodes for Li-ion batteries. <em>Nature Energy</em>, 2021, 6: 781–789.</p>
+        <p id="ref-14">[14] House R A, et al. What triggers oxygen loss in oxygen redox cathode materials? <em>Chemistry of Materials</em>, 2019, 31: 3293–3300.</p>
+        <p id="ref-15">[15] Kothalawala V N, Suzuki K, Nokelainen J, et al. Investigating the electronic and magnetic properties of Na<sub>x</sub>Fe<sub>1/2</sub>Mn<sub>1/2</sub>O<sub>2</sub> cathode materials with X-ray Compton scattering. <em>arXiv</em>:2602.12378, 2026; <em>RSC Advances</em>, 2026, 16: 32321.</p>
+        <p id="ref-16">[16] Chu S, Wang L, Bian J, et al. Iron-mediated reversible lattice-oxygen redox enables stable 200 Wh kg<sup>−1</sup> sodium-ion batteries. <em>Nature Energy</em>, 2026. DOI: 10.1038/s41560-026-02112-8.</p>
+        <p id="ref-17">[17] Zhang H, Zhang Y, Yan D, et al. Activating ferroelectric-magnetic synergistic effects at cathode-electrolyte interfaces toward superfast and stable sodium storage. <em>Advanced Materials</em>, 2025, 37: 2502846.</p>
+        <p id="ref-18">[18] Huang R, Zhang H, et al. Triggering interfacial magnetoelectric coupling at layered oxide cathodes for high-rate Na-ion storage. <em>Advanced Functional Materials</em>, 2026. DOI: 10.1002/adfm.78379.</p>
+        <p id="ref-19">[19] Dai K, Wu J, Zhuo Z, et al. High reversibility of lattice oxygen redox quantified by direct bulk probes of both anionic and cationic redox reactions. <em>Joule</em>, 2019, 3: 518–541.</p>
+        <p id="ref-20">[20] Kim H, Kim D J, Seo D-H, et al. Ab initio study related magnetic ordering in layered Na–Fe–Mn oxides. See also discussion in Ref. [15].</p>
+        <p id="ref-21">[21] Zhou Z, Cheng C, et al. Strengthened π-type interaction in layered oxide cathodes with reversible anionic redox for sodium-ion batteries. <em>Chemical Science</em>, 2025.</p>
+        <p id="ref-22">[22] Wang Y, Sun Z, Jin J, et al. In situ bulk oxygen vacancy manufacturing and surface spinel layer coating enable high-performance Na-ion layered Fe–Mn based cathodes. <em>Advanced Functional Materials</em>, 2025, 35: 2504354.</p>
+        <p id="ref-23">[23] Benchmark study of DFT functionals for predicting physicochemical properties of Na–Ni–Mn cathode. <em>EES Batteries</em>, 2026. DOI: 10.1039/d6eb00090h.</p>
+        <p id="ref-24">[24] Kim H-J, Voronina N, et al. Trade-off effect of Fe in earth-abundant P2-type sodium cathode materials: Transition metal dissolution and oxygen redox mechanism. <em>Energy Storage Materials</em>, 2024.</p>
+        <p id="ref-25">[25] Zhang K, Zou J, et al. Suppressing Fe migration for highly reversible oxygen redox of sodium-ion layered oxide cathode. <em>Journal of the American Chemical Society</em>, 2025, 147: 48147–48157.</p>
+        <p id="ref-26">[26] Clément R J, Billaud J, Armstrong A R, et al. Structurally stable Mg-doped P2-Na<sub>2/3</sub>Mn<sub>1−y</sub>Mg<sub>y</sub>O<sub>2</sub> sodium-ion battery cathodes with high rate performance. <em>Energy &amp; Environmental Science</em>, 2016, 9: 3240–3251.</p>
+        <p id="ref-27">[27] Yang L, Li X, Liu J, et al. Lithium-doping stabilized high-performance P2-Na<sub>0.66</sub>Li<sub>0.18</sub>Fe<sub>0.12</sub>Mn<sub>0.7</sub>O<sub>2</sub> cathode for sodium ion batteries. <em>Journal of the American Chemical Society</em>, 2019, 141: 6680–6689.</p>
+        <p id="ref-28">[28] 程方益, 张凯, 等. 锂双位点取代实现钠离子层状氧化物正极的高容量和零应变. <em>Journal of the American Chemical Society</em>, 相关报道见南开大学先进能源材料化学教育部重点实验室, 2026.</p>
+        <p id="ref-29">[29] Zhao W, Zhang Y, Wang Y, et al. Al/Ti co-doped Fe/Mn-based layered oxide for high-performance sodium-ion storage. <em>Nanoscale</em>, 2026. DOI: 10.1039/d6nr01237j.</p>
+        <p id="ref-30">[30] Meng Y Q, Yang Y, Wang R, et al. Synergistic regulation of lattice strain and electronic structure toward a high-rate and long-cycle O3-NaNi<sub>1/3</sub>Fe<sub>1/3</sub>Mn<sub>1/3</sub>O<sub>2</sub> cathode. <em>Journal of Energy Chemistry</em>, 2026, 119: 939–948.</p>
+        <p id="ref-31">[31] Li F, et al. Local electronic structure regulation to consolidate surface oxygen of layered oxide cathodes in sodium-ion batteries. <em>Chemistry of Materials</em>, 2025, 37: 8281–8290.</p>
+        <p id="ref-32">[32] Song Y, Dong W, Lv Z, et al. Unlocking iron redox depth for high-energy layered sodium oxide cathodes. <em>Carbon Energy</em>, 2026. DOI: 10.1002/cey2.70142.</p>
+        <p id="ref-33">[33] 郭少华, 周豪慎, 等. 双蜂窝超晶格构筑高活性与高可逆的钠离子电池晶格氧活性正极材料. 南京大学固体微结构物理国家重点实验室, 2026.</p>
+        <p id="ref-34">[34] Liu K, Yu C, Song Z, et al. Honeycomb superstructure enabled by Mg doping for enhanced anionic redox reversibility in layered oxide cathodes. <em>Applied Physics Letters</em>, 2026.</p>
+        <p id="ref-35">[35] Chu S, Kang S, et al. Steric effect enhancing reversible oxygen redox and minimizing voltage decay in layered sodium cathodes. <em>Advanced Functional Materials</em>, 2026, 36: 1–9.</p>
+        <p id="ref-36">[36] Cai T, Cai M, Mu J, et al. High-entropy layered oxide cathode enabling high-rate for solid-state sodium-ion batteries. <em>Nano-Micro Letters</em>, 2024, 16: 10.</p>
+        <p id="ref-37">[37] Wang L, et al. Progress and perspective of high-entropy strategy applied in layered transition metal oxide cathode materials. <em>Advanced Functional Materials</em>, 2024.</p>
+        <p id="ref-38">[38] Huang Z, Wang S, et al. High-entropy layered oxide cathode materials with moderated interlayer spacing and enhanced kinetics. <em>Advanced Materials</em>, 2024.</p>
+        <p id="ref-39">[39] Wang Z-L, Li Y-D, et al. Anisotropic bonding regulation enables reversible oxygen redox in entropy-stabilized layered oxide cathodes. <em>Nano Energy</em>, 2026, 112372.</p>
+        <p id="ref-40">[40] Chen G, Yang T, Huang Z, Xiao Y, et al. Precursor-regulated stacking faults enable high-voltage stability for P2-type layered-oxide sodium-ion cathodes. <em>Advanced Energy Materials</em>, 2026.</p>
+        <p id="ref-41">[41] 肖荫果, 等. 调控初始钠含量提升钠离子电池正极高压循环可逆性. <em>Advanced Functional Materials</em>, 2026.</p>
+        <p id="ref-42">[42] Mechanistic insights into oxygen release from layered oxide cathodes for reliable sodium-ion batteries. <em>Small</em>, 2026.</p>
+        <p id="ref-43">[43] Zarrabeitia M, Nobili F, Lakuntza O, et al. Role of the voltage window on the capacity retention of P2-Na<sub>2/3</sub>[Fe<sub>1/2</sub>Mn<sub>1/2</sub>]O<sub>2</sub>. <em>Communications Chemistry</em>, 2022, 5: 11.</p>
+        <p id="ref-44">[44] Mortemard de Boisse B, Carlier D, Guignard M, et al. P2-Na<sub>x</sub>Mn<sub>1/2</sub>Fe<sub>1/2</sub>O<sub>2</sub> phase used as positive electrode in Na batteries. <em>Inorganic Chemistry</em>, 2014, 53: 11197–11205.</p>
+        <p id="ref-45">[45] Tang Y, Zhang Q, Zuo W, et al. Sustainable layered cathode with suppressed phase transition for long-life sodium-ion batteries. <em>Nature Sustainability</em>, 2024, 7: 348–356.</p>
+        <p id="ref-46">[46] Rahman M M, et al. Redox mechanism in Na-ion battery cathodes probed by advanced soft X-ray spectroscopy. <em>Frontiers in Chemistry</em>, 2020, 8: 816.</p>
+        <p id="ref-47">[47] Qiu J, Qin M, et al. High-entropy configuration regulating interlayer oxygen charge toward high-voltage and air-stability layered cathode. <em>Advanced Functional Materials</em>, 2025.</p>
+        <p id="ref-48">[48] Xue H, Shi X, et al. Synergizing covalent-ionic tri-site coordination in P2-type Na<sub>0.67</sub>Fe<sub>0.33</sub>Mn<sub>0.67</sub>O<sub>2</sub>. <em>Advanced Science</em>, 2026. DOI: 10.1002/advs.76648.</p>
+        <p id="ref-49">[49] Gao M, Zhao R, et al. Inhibition of oxygen redox chemistry in P2/O3 layered oxide cathodes via Ca/Ti co-substitution. <em>Journal of Alloys and Compounds</em>, 2026, 1050: 1–12.</p>
+        <p id="ref-50">[50] Niu Q-J, Cheng C, et al. Distinct charge compensation induced by cationic ordering-disordering transition in layered oxide cathode. <em>ACS Nano</em>, 2026.</p>
+        <footer class="note">文献说明：正文引用以同行评议论文与预印本为主。部分 2026 年新结果（铁介导层氧、界面磁电耦合、Compton 磁剖面、双蜂窝超晶格等）代表该方向的最新实验进展，阅读时请以正式发表版本的页码与补充材料为准。点击正文角标可跳转到对应文献。</footer>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
