@@ -6,307 +6,254 @@
 <title>自旋电化学与拓扑动力学：钠电层状正极多场耦合、合成热力学与全生命周期退化图谱</title>
 <style>
 :root {
-  --bg: #090d16;
-  --panel: #0f172a;
-  --card: #141f36;
-  --card-border: #1e293b;
-  --accent-emerald: #10b981;
-  --accent-indigo: #818cf8;
-  --accent-cyan: #06b6d4;
-  --accent-amber: #f59e0b;
-  --accent-rose: #f43f5e;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-  --font-serif: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", Georgia, serif;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", Consolas, Menlo, monospace;
+  --ink: #1c2530;
+  --muted: #5b6b7c;
+  --accent: #047857;
+  --accent2: #0f766e;
+  --bg: #f7f8f6;
+  --card: #ffffff;
+  --line: #dfe5e8;
+  --hl: #e6f4ea;
+  --gold: #d3a26b;
 }
-
 * { box-sizing: border-box; }
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--text-main);
-  font-family: var(--font-serif);
+  color: var(--ink);
+  font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", Georgia, "Times New Roman", serif;
   line-height: 1.85;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
+  font-size: 16.5px;
 }
-
-/* Nav */
-nav#top-paper-nav {
-  background: #0b1120;
-  color: #fff;
-  padding: 10px 24px;
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid var(--accent-emerald);
-  position: sticky;
-  top: 0;
-  z-index: 10000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.55);
-}
-nav#top-paper-nav a {
-  text-decoration: none;
-  padding: 5px 12px;
-  border-radius: 6px;
-  font-size: 12.5px;
-  font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.12);
-  transition: all 0.2s;
-}
-
 .wrap {
-  max-width: 1060px;
+  max-width: 1020px;
   margin: 0 auto;
-  padding: 0 24px 80px;
+  padding: 0 26px 80px;
 }
-
-/* Hero */
 header.hero {
-  background: radial-gradient(circle at 80% 20%, #1e1b4b 0%, #090d16 75%);
-  border-bottom: 1px solid var(--card-border);
-  padding: 56px 24px 44px;
-  margin-bottom: 36px;
+  background: linear-gradient(135deg, #064e3b 0%, #047857 55%, #0f766e 100%);
+  color: #fff;
+  padding: 54px 26px 46px;
+  border-bottom: 5px solid #d3a26b;
 }
 .hero-inner {
-  max-width: 1060px;
+  max-width: 1020px;
   margin: 0 auto;
 }
-.badge-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--accent-emerald);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+.kicker {
+  letter-spacing: .22em;
+  font-size: 13px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  opacity: .9;
+  font-family: system-ui, sans-serif;
+  color: #a7f3d0;
+  margin-bottom: 12px;
 }
 h1 {
   font-size: 31px;
-  line-height: 1.35;
-  color: #fff;
-  margin: 0 0 14px;
+  line-height: 1.42;
+  margin: 10px 0;
   font-weight: 700;
+  color: #fff;
 }
-.hero-subtitle {
-  font-size: 17.5px;
-  color: var(--accent-indigo);
-  margin-bottom: 20px;
-  font-weight: 400;
+.subtitle {
+  font-size: 17px;
+  opacity: .95;
+  margin: 0 0 18px;
+  color: #e2e8f0;
 }
-.meta-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  color: var(--text-muted);
+.meta {
+  font-family: system-ui, sans-serif;
+  font-size: 13.5px;
+  opacity: .88;
 }
-.meta-bar span b { color: #fff; }
+.meta span {
+  margin-right: 22px;
+}
 
-/* Sections */
 section {
-  background: var(--panel);
-  border: 1px solid var(--card-border);
+  background: var(--card);
+  border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 32px 36px;
-  margin: 28px 0;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  padding: 30px 34px;
+  margin: 26px 0;
+  box-shadow: 0 2px 10px rgba(20,50,60,.05);
 }
 h2 {
   font-size: 23px;
-  color: var(--accent-emerald);
-  border-left: 4px solid var(--accent-indigo);
-  padding-left: 14px;
-  margin: 0 0 20px;
+  color: var(--accent);
+  border-left: 5px solid var(--gold);
+  padding-left: 13px;
+  margin: 8px 0 18px;
 }
 h3 {
   font-size: 18.5px;
-  color: #fff;
-  margin: 26px 0 12px;
+  color: #20454f;
+  margin: 26px 0 10px;
 }
 h4 {
-  font-size: 16px;
-  color: var(--accent-cyan);
+  font-size: 16.5px;
+  color: var(--accent2);
   margin: 20px 0 8px;
 }
 p {
-  margin: 14px 0;
+  margin: 12px 0;
   text-align: justify;
-  color: #cbd5e1;
+  color: var(--ink);
 }
 
 /* Callouts */
 .callout {
   border-radius: 8px;
-  padding: 18px 22px;
-  margin: 22px 0;
-  font-size: 15px;
-  border-left: 4px solid;
+  padding: 16px 20px;
+  margin: 18px 0;
+  font-size: 15.5px;
+  border-left: 5px solid;
 }
 .callout.quantum {
-  background: rgba(129, 140, 248, 0.08);
-  border-color: var(--accent-indigo);
-  color: #e0e7ff;
+  background: #f0fdf4;
+  border-color: #059669;
+  color: #064e3b;
 }
 .callout.industry {
-  background: rgba(245, 158, 11, 0.08);
-  border-color: var(--accent-amber);
-  color: #fef3c7;
-}
-.callout.danger {
-  background: rgba(244, 63, 94, 0.08);
-  border-color: var(--accent-rose);
-  color: #fecdd3;
+  background: #fffbeb;
+  border-color: #d97706;
+  color: #78350f;
 }
 .callout-title {
-  font-family: var(--font-sans);
+  font-family: system-ui, sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 14.5px;
   margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
-/* 4-Card Multi-field Grid */
+/* Grid */
 .field-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 20px;
-  margin: 24px 0;
+  margin: 22px 0;
 }
 .field-card {
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-top: 3px solid var(--accent-cyan);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid #059669;
   border-radius: 10px;
   padding: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .field-card h4 {
   margin: 0 0 10px;
-  color: #fff;
+  color: #064e3b;
   font-size: 16.5px;
 }
 .field-tag {
   display: inline-block;
-  background: rgba(6, 182, 212, 0.15);
-  color: var(--accent-cyan);
-  font-family: var(--font-sans);
+  background: #ecfdf5;
+  color: #047857;
+  font-family: system-ui, sans-serif;
   font-size: 11.5px;
   padding: 2px 8px;
   border-radius: 4px;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 .field-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.65;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 /* Tables */
 table.quantum-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 22px 0;
-  font-family: var(--font-sans);
-  font-size: 13.8px;
+  margin: 18px 0;
+  font-family: system-ui, sans-serif;
+  font-size: 14.2px;
+  line-height: 1.65;
 }
 table.quantum-table th {
-  background: #1e1b4b;
-  color: var(--accent-indigo);
+  background: #047857;
+  color: #fff;
   text-align: left;
-  padding: 12px 14px;
-  border-bottom: 2px solid var(--card-border);
+  padding: 10px 12px;
   font-weight: 600;
+  font-size: 13.8px;
 }
 table.quantum-table td {
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--card-border);
-  color: #cbd5e1;
+  border: 1px solid var(--line);
+  padding: 9px 12px;
   vertical-align: top;
+  color: var(--ink);
 }
-table.quantum-table tr:hover td {
-  background: rgba(255,255,255,0.02);
+table.quantum-table tr:nth-child(even) {
+  background: #fbfcfc;
 }
 
-/* Interactive Simulator */
+/* Simulator */
 .simulator-box {
-  background: #0b1329;
-  border: 2px solid #2e3856;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
   border-radius: 12px;
-  padding: 26px;
-  margin: 30px 0;
-  font-family: var(--font-sans);
+  padding: 24px;
+  margin: 24px 0;
+  font-family: system-ui, sans-serif;
 }
 .sim-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #1e293b;
-  padding-bottom: 14px;
-  margin-bottom: 20px;
+  border-bottom: 1px solid #bbf7d0;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
 }
 .sim-title {
-  font-size: 17px;
+  font-size: 16.5px;
   font-weight: 700;
-  color: var(--accent-emerald);
+  color: #064e3b;
 }
 .sim-controls {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  margin-bottom: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
 }
 .control-item label {
   display: block;
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--muted);
   margin-bottom: 6px;
 }
 .control-item input[type=range] {
   width: 100%;
-  accent-color: var(--accent-emerald);
+  accent-color: #047857;
 }
 .sim-readouts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 @media (max-width: 768px) {
   .sim-readouts { grid-template-columns: repeat(2, 1fr); }
 }
 .readout-card {
-  background: #141f36;
-  border: 1px solid var(--card-border);
+  background: #ffffff;
+  border: 1px solid #bbf7d0;
   border-radius: 8px;
-  padding: 12px 14px;
+  padding: 12px 10px;
   text-align: center;
 }
 .readout-val {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
-  font-family: var(--font-mono);
+  font-family: Georgia, serif;
   margin-top: 4px;
 }
 .readout-lbl {
   font-size: 11.5px;
-  color: var(--text-dim);
-  text-transform: uppercase;
+  color: var(--muted);
 }
 .gauge-status {
   padding: 12px 16px;
@@ -318,82 +265,52 @@ table.quantum-table tr:hover td {
 }
 
 code {
-  font-family: var(--font-mono);
-  background: rgba(255,255,255,0.08);
+  font-family: Consolas, monospace;
+  background: #f1f5f9;
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.9em;
-  color: var(--accent-cyan);
+  color: #065f46;
 }
-
-  /* Modern High-End Typography & Font Smoothing Patch */
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif !important;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-    text-rendering: optimizeLegibility !important;
-    letter-spacing: 0.015em;
-  }
-  body.serif-font {
-    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", serif !important;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif !important;
-    letter-spacing: 0.02em;
-    font-weight: 600;
-  }
-  code, pre, .mono {
-    font-family: "JetBrains Mono", Consolas, Menlo, Monaco, "Courier New", monospace !important;
-  }
-  p {
-    text-align: justify;
-    line-height: 1.85 !important;
-  }
 </style>
 </head>
 <body>
 
-<nav id="top-paper-nav" style="background:#090d16; color:#fff; padding:10px 20px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif; font-size:13px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border-bottom:2px solid #10b981; position:sticky; top:0; z-index:10000; box-shadow:0 4px 18px rgba(0,0,0,0.5);">
+<nav id="top-paper-nav" style="background:#0f3844; color:#fff; padding:10px 24px; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:13.5px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border-bottom:3px solid #d3a26b; position:sticky; top:0; z-index:10000; box-shadow:0 3px 12px rgba(0,0,0,0.18);">
   <div style="font-weight:700; display:flex; align-items:center; gap:8px;">
-    <span>⚡ 钠电正极磁矩文库</span>
+    <span>⚡ 钠电正极磁矩与晶格氧氧化还原学术文库</span>
   </div>
-  <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-    <a href="index.html" style="color:#94a3b8; background:rgba(255,255,255,0.06); text-decoration:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); transition:all 0.2s;">
-      📄 篇一：调研综述 (矢量图)
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a href="index.html" style="color:#d6e4ea; background:rgba(255,255,255,0.12); text-decoration:none; padding:5px 13px; border-radius:6px; font-size:12.5px; font-weight:600; border:1px solid rgba(255,255,255,0.2); transition:all 0.2s;">
+      📄 篇一：调研综述 (矢量图版)
     </a>
-    <a href="outlook.html" style="color:#94a3b8; background:rgba(255,255,255,0.06); text-decoration:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); transition:all 0.2s;">
-      📄 篇二：机理与展望 (理论版)
+    <a href="outlook.html" style="color:#d6e4ea; background:rgba(255,255,255,0.12); text-decoration:none; padding:5px 13px; border-radius:6px; font-size:12.5px; font-weight:600; border:1px solid rgba(255,255,255,0.2); transition:all 0.2s;">
+      📄 篇二：机理、策略与展望 (理论版)
     </a>
-    <a href="cost-of-spin.html" style="color:#94a3b8; background:rgba(255,255,255,0.06); text-decoration:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); transition:all 0.2s;">
+    <a href="cost-of-spin.html" style="color:#d6e4ea; background:rgba(255,255,255,0.12); text-decoration:none; padding:5px 13px; border-radius:6px; font-size:12.5px; font-weight:600; border:1px solid rgba(255,255,255,0.2); transition:all 0.2s;">
       ⚡ 篇三：自旋的代价 (前线账本)
     </a>
-    <a href="spin-dynamics.html" style="color:#fff; background:#10b981; text-decoration:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); transition:all 0.2s;">
-      🌌 篇四：拓扑动力学
+    <a href="spin-dynamics.html" style="color:#fff; background:#059669; text-decoration:none; padding:5px 13px; border-radius:6px; font-size:12.5px; font-weight:600; border:1px solid rgba(255,255,255,0.2); transition:all 0.2s;">
+      🌌 篇四：自旋电化学与拓扑动力学
     </a>
-    <div style="display:inline-flex; align-items:center; gap:4px; margin-left:6px; padding-left:8px; border-left:1px solid rgba(255,255,255,0.2);">
-      <button id="btn-toggle-font" title="切换黑体/宋体" style="background:rgba(255,255,255,0.1); color:#cbd5e1; border:1px solid rgba(255,255,255,0.15); padding:3px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔤 黑体</button>
-      <button id="btn-font-minus" title="减小字号" style="background:rgba(255,255,255,0.1); color:#cbd5e1; border:1px solid rgba(255,255,255,0.15); padding:3px 7px; border-radius:4px; font-size:11.5px; cursor:pointer;">A-</button>
-      <button id="btn-font-plus" title="加大字号" style="background:rgba(255,255,255,0.1); color:#cbd5e1; border:1px solid rgba(255,255,255,0.15); padding:3px 7px; border-radius:4px; font-size:11.5px; cursor:pointer;">A+</button>
-    </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="badge-tag">🌌 跨界全新视界 · 多物理场耦合与量子动力学</div>
+    <div class="kicker">跨界全新视界 · 多物理场耦合与量子动力学</div>
     <h1>自旋电化学与拓扑动力学：钠电层状正极多场耦合、合成热力学与全生命周期退化图谱</h1>
-    <div class="hero-subtitle">跳出单胞静态配位局限：从非平衡态自旋极化输运、高温自旋退火冶金学到电池全生命周期无损量子听诊</div>
-    <div class="meta-bar">
-      <span>作者：<b>zhr2271854800 & AGY Multi-Physics Lab</b></span>
-      <span>发布日期：<b>2026 年 10 月</b></span>
-      <span>全新视角：<b>动态非平衡态 · 固相冶金动力学 · 拓扑相干性 · 电池健康度 SOH</b></span>
+    <div class="subtitle">跳出单胞静态配位局限：从非平衡态自旋极化输运、高温自旋退火冶金学到电池全生命周期无损量子听诊</div>
+    <div class="meta">
+      <span>作者：zhr2271854800 & AGY Multi-Physics Lab</span>
+      <span>发布日期：2026 年 10 月</span>
+      <span>定位：动态非平衡态 · 固相冶金动力学 · 拓扑相干性</span>
     </div>
   </div>
 </header>
 
 <div class="wrap">
 
-  <!-- 导言 -->
   <section>
     <h2>一、 视界重构：为什么必须跳出“静态单胞”的认知茧房？</h2>
     <p>
@@ -407,17 +324,12 @@ code {
       <li><strong>空间关联鸿沟</strong>：晶格氧（O 2p）根本不是孤立的阴离子点电荷，而是高度离域、贯穿整层 TM–O–TM 骨架的连续能带！忽略空间拓扑相干性，只盯住单个八面体的自旋态，就像“只见树木，不见森林”。</li>
       <li><strong>制造工艺鸿沟</strong>：学术界在手套箱里精雕细琢合成出的 5 克理想样品，一旦放大到工业级 500 公斤辊道窑回转炉中，高温烧结降温阶段的<strong>“自旋退火相分离”</strong>会彻底破坏微观磁交换网络，形成不可控的自旋玻璃态与阳离子混排。</li>
     </ol>
-    <p>
-      本文第四篇专章，正是为了填补这一跨界视角的空白：我们将视角切换至<strong>非平衡态自旋电化学（Spin Electrochemistry）、固相合成冶金学动力学与全生命周期量子表征</strong>。
-    </p>
   </section>
 
-  <!-- 四大前沿跨界视界 -->
   <section>
     <h2>二、 四大跨界前沿视界：从量子拓扑到工业产线</h2>
 
     <div class="field-grid">
-      <!-- 视界 1 -->
       <div class="field-card">
         <span class="field-tag">⚡ 动态量子动力学</span>
         <h4>① 自旋阻抗与快充自旋翻转过电位</h4>
@@ -426,16 +338,14 @@ code {
         </div>
       </div>
 
-      <!-- 视界 2 -->
       <div class="field-card">
         <span class="field-tag">🧲 多物理场耦合</span>
         <h4>② 外加磁场辅助与微观 MHD 离子泵</h4>
         <div class="field-desc">
-          不满足于内部微弱的静态磁场，2025–2026 前沿课题组开始探索在极耳或集流体处施加 0.1~0.4 T 的永磁/交变磁场。磁场通过**手性诱导自旋选择（CISS）**效应筛选电子注入自旋态，同时洛伦兹力在固液界面诱发微观微磁流体动力学（Micro-MHD）对流，将钠离子界面扩散层厚度削减 35%，在 5C 快充下直接将循环寿命延长 2.3 倍。
+          不满足于内部微弱的静态磁场，2025–2026 前沿课题组开始探索在极耳或集流体处施加 0.1~0.4 T 的永磁/交变磁场。磁场通过手性诱导自旋选择（CISS）效应筛选电子注入自旋态，同时洛伦兹力在固液界面诱发微观微磁流体动力学（Micro-MHD）对流，将钠离子界面扩散层厚度削减 35%，在 5C 快充下直接将循环寿命延长 2.3 倍。
         </div>
       </div>
 
-      <!-- 视界 3 -->
       <div class="field-card">
         <span class="field-tag">🔥 固相冶金热力学</span>
         <h4>③ 吨级烧结降温中的自旋畴淬火冻结</h4>
@@ -444,7 +354,6 @@ code {
         </div>
       </div>
 
-      <!-- 视界 4 -->
       <div class="field-card">
         <span class="field-tag">🌐 能带拓扑保护</span>
         <h4>④ 瓦尼尔中心离域与拓扑相干伞</h4>
@@ -455,7 +364,6 @@ code {
     </div>
   </section>
 
-  <!-- 比较数据表 -->
   <section>
     <h2>三、 视界交汇：静态配位论 vs 动态自旋电化学</h2>
     <table class="quantum-table">
@@ -496,7 +404,6 @@ code {
     </table>
   </section>
 
-  <!-- 全生命周期自旋演化模拟器 -->
   <section>
     <h2>四、 交互看板：电池全生命周期自旋退化与 SOH 量子听诊推演</h2>
     <p>
@@ -506,20 +413,20 @@ code {
     <div class="simulator-box">
       <div class="sim-header">
         <div class="sim-title">🔬 全生命周期自旋态演化与健康状态（SOH）量子推演器</div>
-        <span style="font-size:12px; color:var(--text-dim);">基于 2026 Operando 磁化率与居里-外斯弛豫模型</span>
+        <span style="font-size:12.5px; color:var(--muted);">基于 2026 Operando 磁化率与居里-外斯弛豫模型</span>
       </div>
 
       <div class="sim-controls">
         <div class="control-item">
-          <label>循环周数 Cycles (1 ~ 1500 圈): <b id="val-cycle" style="color:var(--accent-emerald);">300</b></label>
+          <label>循环周数 Cycles (1 ~ 1500 圈): <b id="val-cycle" style="color:#047857;">300</b></label>
           <input type="range" id="slider-cycle" min="1" max="1500" step="10" value="300">
         </div>
         <div class="control-item">
-          <label>工作充放倍率 (0.2C ~ 5.0C 快充): <b id="val-rate" style="color:var(--accent-cyan);">1.0 C</b></label>
+          <label>工作充放倍率 (0.2C ~ 5.0C 快充): <b id="val-rate" style="color:#0f766e;">1.0 C</b></label>
           <input type="range" id="slider-rate" min="0.2" max="5.0" step="0.2" value="1.0">
         </div>
         <div class="control-item">
-          <label>外加辅助磁场强度 (0 ~ 1.0 Tesla): <b id="val-bfield" style="color:var(--accent-indigo);">0.3 T</b></label>
+          <label>外加辅助磁场强度 (0 ~ 1.0 Tesla): <b id="val-bfield" style="color:#b4552d;">0.3 T</b></label>
           <input type="range" id="slider-bfield" min="0" max="1.0" step="0.05" value="0.3">
         </div>
       </div>
@@ -527,29 +434,28 @@ code {
       <div class="sim-readouts">
         <div class="readout-card">
           <div class="readout-lbl">居里-外斯温 θ<sub>CW</sub> 漂移</div>
-          <div class="readout-val" id="out-tcw" style="color:#818cf8;">-142 K</div>
+          <div class="readout-val" id="out-tcw" style="color:#064e3b;">-142 K</div>
         </div>
         <div class="readout-card">
           <div class="readout-lbl">自旋极化过电位 η<sub>spin</sub></div>
-          <div class="readout-val" id="out-etaspin" style="color:#06b6d4;">34 mV</div>
+          <div class="readout-val" id="out-etaspin" style="color:#0f766e;">34 mV</div>
         </div>
         <div class="readout-card">
           <div class="readout-lbl">自旋翻转阻抗 R<sub>spin</sub></div>
-          <div class="readout-val" id="out-rspin" style="color:#10b981;">4.8 Ω</div>
+          <div class="readout-val" id="out-rspin" style="color:#b4552d;">4.8 Ω</div>
         </div>
         <div class="readout-card">
           <div class="readout-lbl">预估电芯剩余容量 SOH</div>
-          <div class="readout-val" id="out-soh" style="color:#f59e0b;">91.4%</div>
+          <div class="readout-val" id="out-soh" style="color:#d97706;">91.4%</div>
         </div>
       </div>
 
-      <div class="gauge-status" id="gauge-box2" style="background:rgba(16,185,129,0.15); color:#34d399; border:1px solid rgba(16,185,129,0.4);">
+      <div class="gauge-status" id="gauge-box2" style="background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0;">
         🟢 状态健康：超交换反铁磁长程磁相干完好，自旋极化阻抗较低，处于优质服役期。
       </div>
     </div>
   </section>
 
-  <!-- 总结与技术展望 -->
   <section>
     <h2>五、 终局蓝图：四重视角统一的钠电前沿化学</h2>
     <div class="callout quantum">
@@ -568,7 +474,6 @@ code {
 </div>
 
 <script>
-// Simulator Logic for Paper 4
 const sCycle = document.getElementById('slider-cycle');
 const sRate = document.getElementById('slider-rate');
 const sBfield = document.getElementById('slider-bfield');
@@ -592,18 +497,11 @@ function updateSim4() {
   vRate.innerText = rate.toFixed(1) + ' C';
   vBfield.innerText = bfield.toFixed(2) + ' T';
 
-  // Physical calculations
-  // Curie-Weiss temp drifts from strong AFM (-185K) towards disordered/spin-glass (-30K)
   const degFactor = Math.pow(cycle / 1500, 1.2) * (1 + (rate - 1) * 0.25) * (1 - bfield * 0.28);
   const tcw = (-185 + 145 * Math.min(1.0, degFactor)).toFixed(0);
 
-  // Overpotential
   const eta = Math.max(12, (18 * rate + 45 * Math.pow(cycle/1500, 1.1) - bfield * 25)).toFixed(0);
-
-  // Spin resistance
   const rspin = Math.max(1.8, (2.2 * Math.sqrt(rate) + 12 * (cycle/1500) - bfield * 3.5)).toFixed(1);
-
-  // SOH
   const loss = (100 * Math.pow(cycle / 1500, 1.15) * (0.18 + 0.05 * rate) * (1 - bfield * 0.22));
   const soh = Math.max(52, Math.min(100, 100 - loss)).toFixed(1);
 
@@ -613,19 +511,19 @@ function updateSim4() {
   outSoh.innerText = soh + '%';
 
   if (soh < 75 || tcw > -60) {
-    gauge2.style.background = 'rgba(244, 63, 94, 0.2)';
-    gauge2.style.color = '#fb7185';
-    gauge2.style.borderColor = 'rgba(244, 63, 94, 0.5)';
+    gauge2.style.background = '#fff1f2';
+    gauge2.style.color = '#9f1239';
+    gauge2.style.borderColor = '#fecdd3';
     gauge2.innerHTML = '🚨 <b>严重衰退态 (EOL)</b>：居里-外斯温大幅右漂，反铁磁超交换网络完全瓦解进入自旋玻璃态，自旋阻抗失控，SOH 跌破产业退役警戒线。';
   } else if (soh < 85 || eta > 65) {
-    gauge2.style.background = 'rgba(245, 158, 11, 0.2)';
-    gauge2.style.color = '#fde047';
-    gauge2.style.borderColor = 'rgba(245, 158, 11, 0.5)';
+    gauge2.style.background = '#fffbeb';
+    gauge2.style.color = '#92400e';
+    gauge2.style.borderColor = '#fde68a';
     gauge2.innerHTML = '⚠️ <b>自旋疲劳衰减期</b>：高倍率快充诱发自旋极化过电位累积，局部出现自旋畴壁缺陷与微量捕获分子氧指纹。';
   } else {
-    gauge2.style.background = 'rgba(16, 185, 129, 0.15)';
-    gauge2.style.color = '#34d399';
-    gauge2.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+    gauge2.style.background = '#ecfdf5';
+    gauge2.style.color = '#065f46';
+    gauge2.style.borderColor = '#a7f3d0';
     gauge2.innerHTML = '🟢 <b>健康高活性期</b>：强反铁磁超交换网络稳固，外加磁场显著压制自旋翻转极化阻抗，SOH 保持优异。';
   }
 }
@@ -636,52 +534,5 @@ sBfield.addEventListener('input', updateSim4);
 updateSim4();
 </script>
 
-
-<script id="typography-controls-script">
-(function() {
-  function initTypeControls() {
-    var btnFont = document.getElementById('btn-toggle-font');
-    var btnSizePlus = document.getElementById('btn-font-plus');
-    var btnSizeMinus = document.getElementById('btn-font-minus');
-    
-    var currentSize = 16;
-    
-    if (btnFont) {
-      btnFont.addEventListener('click', function() {
-        document.body.classList.toggle('serif-font');
-        var isSerif = document.body.classList.contains('serif-font');
-        btnFont.innerText = isSerif ? '🔤 宋体' : '🔤 黑体';
-        localStorage.setItem('preferred-font-serif', isSerif ? '1' : '0');
-      });
-      if (localStorage.getItem('preferred-font-serif') === '1') {
-        document.body.classList.add('serif-font');
-        btnFont.innerText = '🔤 宋体';
-      }
-    }
-    
-    if (btnSizePlus) {
-      btnSizePlus.addEventListener('click', function() {
-        if (currentSize < 22) {
-          currentSize += 1;
-          document.body.style.fontSize = currentSize + 'px';
-        }
-      });
-    }
-    if (btnSizeMinus) {
-      btnSizeMinus.addEventListener('click', function() {
-        if (currentSize > 13) {
-          currentSize -= 1;
-          document.body.style.fontSize = currentSize + 'px';
-        }
-      });
-    }
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTypeControls);
-  } else {
-    initTypeControls();
-  }
-})();
-</script>
 </body>
 </html>
